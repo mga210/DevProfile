@@ -3,914 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Software Developer Portfolio - Showcasing skills, projects, and experience in web development">
-    <meta name="keywords" content="software developer, web developer, portfolio, HTML, CSS, JavaScript">
-    <meta name="author" content="Miguel A. Gonzalez Almonte">
-    <title>Miguel A. Gonzalez Almonte | AI Developer | Software Systems Thinker</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <title>Download Miguel's Portfolio</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+        .download-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+        }
+        .features {
+            text-align: left;
+            margin-top: 30px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        .file-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">
-                    <img src="assets/miguel-profile.png" alt="Miguel A. Gonzalez Almonte" class="nav-avatar">
-                    <span>Miguel Gonzalez</span>
-                </a>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#achievements" class="nav-link">Achievements</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+    <div class="download-card">
+        <div class="profile-img">
+            <i class="fas fa-user"></i>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="greeting">Hello, I'm</span>
-                        <span class="name">Miguel A. Gonzalez Almonte</span>
-                        <span class="role">AI Developer | Software Systems Thinker | Organizational Intelligence</span>
-                    </h1>
-                    <p class="hero-description">
-                        Strategic systems thinker with a background in operations leadership and a forward trajectory in AI development. I build tools that streamline processes, surface meaningful insights, and support faster, more informed decision-making.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                        <a href="#" class="btn btn-outline" onclick="downloadResume()">
-                            <i class="fas fa-download"></i> Download Resume
-                        </a>
-                    </div>
-                    <div class="hero-social">
-                        <a href="https://github.com/mga210" class="social-link" aria-label="GitHub" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/miguel-gonzalez-8a389791" class="social-link" aria-label="LinkedIn" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:mgonzalez869@gmail.com" class="social-link" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="profile-card">
-                        <div class="profile-avatar">
-                            <img src="assets/miguel-profile.png" alt="Miguel A. Gonzalez Almonte">
-                        </div>
-                        <div class="profile-info">
-                            <div class="status">
-                                <span class="status-dot"></span>
-                                Available for work
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <h1>Miguel A. Gonzalez Almonte</h1>
+        <p class="subtitle">AI Developer | Software Systems Thinker | Portfolio Website</p>
+        
+        <a href="miguel-portfolio-website.tar.gz" download class="download-btn">
+            📦 Download Portfolio Website
+        </a>
+        
+        <div class="file-info">
+            <h3>Package Contents</h3>
+            <ul class="feature-list">
+                <li>Complete HTML/CSS/JavaScript portfolio website</li>
+                <li>Node.js/Express backend with TypeScript</li>
+                <li>PostgreSQL database integration</li>
+                <li>Professional headshot and assets</li>
+                <li>Deployment instructions and documentation</li>
+            </ul>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Get to know more about my journey and passion</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="about-card">
-                        <h3>My Journey</h3>
-                        <p>
-                            <strong>Background:</strong> Strategic systems thinker with extensive operations leadership experience across multifamily properties, from Universal Studios to MAA, building expertise in workflow optimization and cross-functional coordination.
-                        </p>
-                        <p>
-                            <strong>The Evolution:</strong> Recognized the potential to transform manual processes through intelligent automation, leading me to develop AI-powered tools that streamline operations and improve decision-making.
-                        </p>
-                        <p>
-                            <strong>Current Focus:</strong> Building custom GPT agents, Python applications, and data visualization tools that turn operational complexity into clear, actionable insights for better organizational productivity.
-                        </p>
-                        <p>
-                            <strong>Education:</strong> Currently pursuing Bachelor of Business Administration in Computer Information Systems at Ana G. Méndez University, with Google PM Certificate and Python for Everybody certification completed.
-                        </p>
-                    </div>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">6+</div>
-                            <div class="stat-label">AI Projects Built</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">50%</div>
-                            <div class="stat-label">Process Improvement</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-details">
-                    <div class="detail-card">
-                        <h4><i class="fas fa-brain"></i> AI & Automation</h4>
-                        <p>GPT workflow engineering, prompt architecture, and intelligent decision-making systems that automate complex operational processes.</p>
-                    </div>
-                    <div class="detail-card">
-                        <h4><i class="fas fa-cogs"></i> Systems Building</h4>
-                        <p>Python application development, GUI frameworks (PySide6/Tkinter), and modular architecture for scalable tools and workflows.</p>
-                    </div>
-                    <div class="detail-card">
-                        <h4><i class="fas fa-chart-line"></i> Operations Intelligence</h4>
-                        <p>8+ years transforming field operations through data visualization, process automation, and cross-functional project management.</p>
-                    </div>
-                </div>
-            </div>
+        
+        <div class="features">
+            <h3>Portfolio Features</h3>
+            <ul class="feature-list">
+                <li>AI Systems Developer professional branding</li>
+                <li>Working contact form with database storage</li>
+                <li>Portfolio analytics and visitor tracking</li>
+                <li>Responsive design for all devices</li>
+                <li>5 featured AI projects showcase</li>
+                <li>Professional certifications display</li>
+                <li>Services & consultation offerings</li>
+                <li>Resume download functionality</li>
+            </ul>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Technical Skills</h2>
-                <p class="section-subtitle">Technologies and tools I work with</p>
-            </div>
-            <div class="skills-content">
-                <div class="skills-category">
-                    <h3><i class="fas fa-brain"></i> AI & LLM Systems</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-robot"></i>
-                            <span>GPT-4 & LLM APIs</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-link"></i>
-                            <span>LangChain</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-edit"></i>
-                            <span>Prompt Engineering</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-cogs"></i>
-                            <span>Agent Workflows</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skills-category">
-                    <h3><i class="fab fa-python"></i> Python Development</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-window-maximize"></i>
-                            <span>PySide6 & Tkinter</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-cube"></i>
-                            <span>Modular Architecture</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-recycle"></i>
-                            <span>Lifecycle Engines</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Learning Systems</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 75%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skills-category">
-                    <h3><i class="fas fa-chart-bar"></i> Data & Dashboards</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-chart-pie"></i>
-                            <span>Power BI</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Pandas & Analytics</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-tasks"></i>
-                            <span>CMMS Integration</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-users"></i>
-                            <span>Team Coordination</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 95%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skills-category">
-                    <h3><i class="fas fa-sync-alt"></i> Workflow Automation</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-plug"></i>
-                            <span>API Integration</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-route"></i>
-                            <span>NLP Routing</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-bolt"></i>
-                            <span>Auto-Triggers</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-project-diagram"></i>
-                            <span>Process Management</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 92%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
+        <div class="file-info">
+            <h3>Your Information Included</h3>
+            <p><strong>Email:</strong> mgonzalez869@gmail.com</p>
+            <p><strong>Phone:</strong> 787-367-9843</p>
+            <p><strong>Location:</strong> Plano, TX</p>
+            <p><strong>LinkedIn:</strong> linkedin.com/in/miguel-gonzalez-8a389791</p>
+            <p><strong>GitHub:</strong> github.com/mga210</p>
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">A showcase of my recent work and contributions</p>
-            </div>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View Live Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">System Pilot - GPT-Powered Software Architecture Strategist</h3>
-                        <p class="project-description">
-                            Built an AI assistant that converts product ideas into formal system blueprints through guided, logic-mapped dialogue. 
-                            Defined user-facing flows, backend logic, and modular behavior layers. Designed for software architects, product leads, and AI toolmakers.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">GPT-4</span>
-                            <span class="tech-tag">System Architecture</span>
-                            <span class="tech-tag">Logic Mapping</span>
-                            <span class="tech-tag">AI Agents</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-puzzle-piece"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View Live Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Blueprint Buddy - Modular GPT Instruction Architect</h3>
-                        <p class="project-description">
-                            Created a full-scale GPT builder that transforms user intent into logic-rich, exportable instruction sets. 
-                            Operates on a 16-block logic canvas with embedded validation engines and multi-format output. Works with prompt engineering mastery and system logic optimization.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">GPT-4</span>
-                            <span class="tech-tag">Prompt Engineering</span>
-                            <span class="tech-tag">Canvas System</span>
-                            <span class="tech-tag">Validation Logic</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View Live Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">MakeReady Digital Board (DMRB)</h3>
-                        <p class="project-description">
-                            Engineered a workflow system to replace Excel tracking in property maintenance teams. 
-                            Designed structured forms, task automation, and vendor/staff role logic. Reduced unit turnover time from 13–20 days to 7 days.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Task Automation</span>
-                            <span class="tech-tag">Workflow Design</span>
-                            <span class="tech-tag">Process Optimization</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-item">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View Live Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Meta Code Sensei - Python Mentor and Architecture Coach</h3>
-                        <p class="project-description">
-                            Developed a learning agent to guide aspiring developers through full-stack system thinking using Python. 
-                            Built 12-phase scaffolds, project prompt modules, and real-time feedback. Showcases instructional logic and backend design.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">GPT-4</span>
-                            <span class="tech-tag">Learning Systems</span>
-                            <span class="tech-tag">Python Mentoring</span>
-                            <span class="tech-tag">Architecture Coaching</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-item">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View Live Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Python Training Board (PTB) - Interactive Learning Environment</h3>
-                        <p class="project-description">
-                            Designed a hands-on platform using Tkinter and PySide6 for GUI development. 
-                            Built modular demo launchers and experimentation flows to help learners build from theory into real, system-based apps.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Tkinter</span>
-                            <span class="tech-tag">PySide6</span>
-                            <span class="tech-tag">GUI Development</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Work Experience</h2>
-                <p class="section-subtitle">My professional journey and achievements</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="experience-card">
-                            <div class="experience-header">
-                                <h3>Service Maintenance Manager</h3>
-                                <span class="company">MAA – Dallas, TX</span>
-                                <span class="duration">Jun 2023 – Present</span>
-                            </div>
-                            <div class="experience-description">
-                                <p>
-                                    Lead service operations across three multifamily properties while embedding AI logic, coordination dashboards, and mobile tools into high-volume workflows.
-                                </p>
-                                <ul class="experience-achievements">
-                                    <li>Designed and deployed AI tools (Make Ready Assistant, Work Order Prioritize) to reduce delays and improve technician response logic</li>
-                                    <li>Built mobile dashboards and coordination tools to surface blockers, lifecycle gaps, and unit progress</li>
-                                    <li>Used Python-assisted reporting to automate updates and align dispatch decisions with real-time workload</li>
-                                    <li>Applied Google PM frameworks to optimize task routing, technician accountability, and lifecycle tracking</li>
-                                </ul>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">AI Tools</span>
-                                <span class="tech-tag">Python Reporting</span>
-                                <span class="tech-tag">Mobile Dashboards</span>
-                                <span class="tech-tag">Google PM</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="experience-card">
-                            <div class="experience-header">
-                                <h3>Service Manager</h3>
-                                <span class="company">RPM Living – Dallas, TX</span>
-                                <span class="duration">May 2022 – Jun 2023</span>
-                            </div>
-                            <div class="experience-description">
-                                <p>
-                                    Directed daily operations at a high-volume multifamily property, integrating agile task planning, cloud reporting tools, and vendor oversight.
-                                </p>
-                                <ul class="experience-achievements">
-                                    <li>Applied Agile-style planning methods to align technician workload with turnover demands</li>
-                                    <li>Developed cloud-based dashboards that reduced administrative friction and improved real-time tracking</li>
-                                    <li>Streamlined service cycles through structured planning and enhanced vendor follow-through</li>
-                                    <li>Used lifecycle reporting to uncover recurring issues and optimize technician assignments</li>
-                                </ul>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Agile Planning</span>
-                                <span class="tech-tag">Cloud Dashboards</span>
-                                <span class="tech-tag">Lifecycle Reporting</span>
-                                <span class="tech-tag">Vendor Management</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="experience-card">
-                            <div class="experience-header">
-                                <h3>Independent Contractor – Residential Services</h3>
-                                <span class="company">First Choice / FSI – Dallas, TX</span>
-                                <span class="duration">Jan 2020 – May 2022</span>
-                            </div>
-                            <div class="experience-description">
-                                <p>
-                                    Managed full-scope renovation projects and unit upgrades with emphasis on digital project tools, SOP creation, and workflow optimization.
-                                </p>
-                                <ul class="experience-achievements">
-                                    <li>Directed timelines using digital project tools to ensure transparency and flow</li>
-                                    <li>Created SOPs for standardized outcomes and crew alignment</li>
-                                    <li>Used mobile tools to monitor flow and flag coordination gaps</li>
-                                    <li>Maintained repeatability and consistency across multifamily properties</li>
-                                </ul>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Digital Project Tools</span>
-                                <span class="tech-tag">SOP Creation</span>
-                                <span class="tech-tag">Mobile Monitoring</span>
-                                <span class="tech-tag">Workflow Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Professional Endorsements</h2>
-                <p class="section-subtitle">What colleagues and stakeholders say about my work</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="quote-icon">
-                            <i class="fas fa-quote-left"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "The AI dispatch system transformed our response times completely. What used to take hours of coordination now happens automatically. This is the kind of operational intelligence that changes how teams work."
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>Operations Director</h4>
-                                <span>Mid-Atlantic Apartment Communities</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="quote-icon">
-                            <i class="fas fa-quote-left"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "The transition from spreadsheet chaos to structured workflows was seamless. The MakeReady system doesn't just track progress - it predicts bottlenecks and suggests solutions."
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>Portfolio Manager</h4>
-                                <span>Property Management Team</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="quote-icon">
-                            <i class="fas fa-quote-left"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "Having someone who understands both operations and technology is rare. The prompt engineering tools don't just automate tasks - they improve decision quality across the board."
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>Cross-functional Lead</h4>
-                                <span>RPM Living</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements" class="achievements">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Achievements & Impact</h2>
-                <p class="section-subtitle">Measurable results and professional recognition</p>
-            </div>
-            <div class="achievements-content">
-                <div class="achievements-grid">
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="achievement-number">65%</div>
-                        <div class="achievement-label">Process Efficiency Improvement</div>
-                        <div class="achievement-description">Average improvement across property management workflows through AI automation</div>
-                    </div>
-                    
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="achievement-number">13→7</div>
-                        <div class="achievement-label">Days Reduced</div>
-                        <div class="achievement-description">Unit turnover time reduction through MakeReady Digital Board implementation</div>
-                    </div>
-                    
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="achievement-number">6+</div>
-                        <div class="achievement-label">AI Projects Deployed</div>
-                        <div class="achievement-description">Production-ready AI systems including System Pilot, Blueprint Buddy, and DMRB</div>
-                    </div>
-                    
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="achievement-number">4</div>
-                        <div class="achievement-label">Professional Certifications</div>
-                        <div class="achievement-description">Google PM Certificate, Python for Everybody, Python 3 Intermediate, EPA Section 608</div>
-                    </div>
-                </div>
-                
-                <div class="certifications-section">
-                    <h3>Professional Certifications</h3>
-                    <div class="certifications-grid">
-                        <div class="cert-item">
-                            <i class="fab fa-google"></i>
-                            <div class="cert-info">
-                                <h4>Google Project Management Certificate</h4>
-                                <span>Coursera • 2025</span>
-                            </div>
-                        </div>
-                        <div class="cert-item">
-                            <i class="fab fa-python"></i>
-                            <div class="cert-info">
-                                <h4>Python for Everybody</h4>
-                                <span>University of Michigan • 2025</span>
-                            </div>
-                        </div>
-                        <div class="cert-item">
-                            <i class="fas fa-leaf"></i>
-                            <div class="cert-info">
-                                <h4>EPA Section 608 Certification</h4>
-                                <span>Environmental Protection Agency • 2018</span>
-                            </div>
-                        </div>
-                        <div class="cert-item">
-                            <i class="fab fa-python"></i>
-                            <div class="cert-info">
-                                <h4>Python 3 - Intermediate Track</h4>
-                                <span>In Progress • 2025</span>
-                            </div>
-                        </div>
-                        <div class="cert-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div class="cert-info">
-                                <h4>BBA Computer Information Systems</h4>
-                                <span>Ana G. Méndez University • In Progress</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Services & Solutions</h2>
-                <p class="section-subtitle">How I can help transform your operations</p>
-            </div>
-            <div class="services-content">
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>AI Workflow Engineering</h3>
-                        <p>Design and implement GPT-powered systems that automate complex decision-making processes and streamline operational workflows.</p>
-                        <div class="service-features">
-                            <div class="feature-item">
-                                <i class="fas fa-check"></i>
-                                <span>Custom GPT Agent Development</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check"></i>
-                                <span>Prompt Engineering & Optimization</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check"></i>
-                                <span>Decision Logic Mapping</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Python Systems Development</h3>
-                        <p>Build robust, modular Python applications with intuitive GUIs that transform complex processes into user-friendly tools.</p>
-                        <div class="service-features">
-                            <div class="feature-item">
-                                <i class="fas fa-check"></i>
-                                <span>GUI Application Development</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check"></i>
-                                <span>Modular Architecture Design</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check"></i>
-                                <span>API Integration & Automation</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <h3>Operations Intelligence</h3>
-                        <p>Transform operational data into actionable insights through intelligent dashboards and process optimization strategies.</p>
-                        <div class="service-features">
-                            <div class="feature-item">
-                                <i class="fas fa-check"></i>
-                                <span>Power BI Dashboard Creation</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check"></i>
-                                <span>Process Mapping & Optimization</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check"></i>
-                                <span>Performance Metrics & KPI Tracking</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="consultation-cta">
-                    <div class="cta-content">
-                        <h3>Ready to Transform Your Operations?</h3>
-                        <p>Let's discuss how AI-powered solutions can streamline your workflows and drive measurable results.</p>
-                        <div class="cta-buttons">
-                            <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
-                            <a href="mailto:mgonzalez869@gmail.com" class="btn btn-secondary">Direct Email</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's discuss your project or just say hello</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <h3>Let's Build Something Together</h3>
-                        <p>
-                            Ready to transform your operational challenges into intelligent solutions? 
-                            I specialize in turning complex workflows into streamlined AI-powered systems.
-                        </p>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <span class="contact-label">Email</span>
-                                    <a href="mailto:mgonzalez869@gmail.com" class="contact-value">mgonzalez869@gmail.com</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <span class="contact-label">Phone</span>
-                                    <a href="tel:+17873679843" class="contact-value">+1 (787) 367-9843</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <span class="contact-label">Location</span>
-                                    <span class="contact-value">Plano, TX</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contact-social">
-                            <a href="https://linkedin.com/in/miguel-gonzalez-8a389791" class="social-link" aria-label="LinkedIn" target="_blank">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/mga210" class="social-link" aria-label="GitHub" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="mailto:mgonzalez869@gmail.com" class="social-link" aria-label="Email">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form-container">
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; 2025 Miguel A. Gonzalez Almonte. All rights reserved.</p>
-                    <p>Built with HTML, CSS, and JavaScript</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+        
+        <p style="margin-top: 30px; color: #666; font-size: 14px;">
+            Built on July 31, 2025 • Ready for deployment on any platform
+        </p>
+    </div>
 </body>
 </html>
