@@ -87,7 +87,7 @@ export class DatabaseStorage implements IStorage {
       .from(portfolioViews);
 
     // Unique visitors (by IP)
-    const [uniqueVisitorsResult] = await db
+    const uniqueVisitorsResult = await db
       .selectDistinct({ ip: portfolioViews.viewerIp })
       .from(portfolioViews);
 
