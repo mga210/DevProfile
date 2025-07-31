@@ -329,8 +329,15 @@ function initTypewriter() {
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        // Skip if href is just "#" or empty
+        if (!href || href === '#') {
+            return;
+        }
+        
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         
         if (target) {
             const offsetTop = target.offsetTop - 80; // Account for fixed navbar
@@ -588,7 +595,8 @@ function downloadResume() {
     // Create a simple resume download (you can replace with actual resume file)
     const resumeContent = `Miguel A. Gonzalez Almonte
 AI Developer | Software Systems Thinker | Organizational Intelligence
-Email: sllm75@hotmail.com | Phone: 787-367-9843 | Location: Plano, TX
+Email: mgonzalez869@gmail.com | Phone: 787-367-9843 | Location: Plano, TX
+LinkedIn: linkedin.com/in/miguel-gonzalez-8a389791
 
 PROFESSIONAL SUMMARY
 Strategic systems thinker with a background in operations leadership and a forward trajectory in AI development, software engineering, and data analytics. Experienced in building tools that streamline processes, surface meaningful insights, and support faster, more informed decision-making.
