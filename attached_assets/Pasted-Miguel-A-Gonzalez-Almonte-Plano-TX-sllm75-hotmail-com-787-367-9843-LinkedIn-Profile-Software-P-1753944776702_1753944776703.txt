@@ -1,0 +1,101 @@
+Miguel A. Gonzalez Almonte
+Plano, TX • sllm75@hotmail.com • 787-367-9843
+LinkedIn Profile
+Software Portfolio
+AI Developer | Software Systems Thinker | Organizational Intelligence & Data Interpreter
+Professional Summary
+Strategic systems thinker with a background in operations leadership and a forward trajectory in AI development, software engineering, and data analytics. Experienced in building tools that streamline processes, surface meaningful insights, and support faster, more informed decision-making. I’ve worked hands-on with custom GPT agents that I personally designed to write modular Python scripts and built data tools that turn complexity into clarity and improve organizational productivity. Holds a Google Project Management certification and brings years of experience in coordinating teams, managing budgets, and optimizing service operations. Currently expanding Python capabilities while developing AI-driven assistants and analytics frameworks designed to solve practical, real-world challenges. Adept at bringing structure to complexity and building scalable solutions that enhance human performance.
+Skills Overview
+AI & Intelligent Systems
+GPT Prompt Engineering • Agent Design & Logic Flows • Decision Automation
+Task Routing Models • Recursive Instruction Systems • Natural Language Inputs
+Python & Software Foundations
+Python (Early Intermediate, AI-assisted) • Modular Scripting
+API Concepts • Excel VBA (Logic & Dashboards) • Workflow Tools: Notion, Asana
+Data & Analytics
+Data Interpretation • Power BI Dashboards • Insight Extraction
+Conditional Logic • Workflow-Based Reporting • CMMS Data Structuring
+Strategic Operations & Project Management
+Google PM Frameworks • Cross-Functional Coordination • Budget Oversight
+Workflow Optimization • Vendor Alignment • Service Lifecycle Planning
+Organizational Systems Design • Process Automation • Cross-Domain Integration
+Professional Experience
+Service Maintenance Manager
+MAA – Dallas, TX | Jun 2023 – Present
+Lead service operations across three multifamily properties while embedding AI logic, coordination dashboards, and mobile tools into high-volume workflows
+Designed and deployed AI tools (Make Ready Assistant, Work Order Prioritize) to reduce delays and improve technician response logic
+Built mobile dashboards and coordination tools to surface blockers, lifecycle gaps, and unit progress
+Used Python-assisted reporting to automate updates and align dispatch decisions with real-time workload
+Applied Google PM frameworks to optimize task routing, technician accountability, and lifecycle tracking
+Delivered cost savings while sustaining compliance, visibility, and service consistency
+Championed mobile CMMS platform adoption to streamline cross-team coordination
+Service Manager
+RPM Living – Dallas, TX | May 2022 – Jun 2023
+Directed daily operations at a high-volume multifamily property, integrating agile task planning, cloud reporting tools, and vendor oversight
+Applied Agile-style planning methods to align technician workload with turnover demands
+Developed cloud-based dashboards that reduced administrative friction and improved real-time tracking
+Streamlined service cycles through structured planning and enhanced vendor follow-through
+Used lifecycle reporting to uncover recurring issues and optimize technician assignments
+Ensured compliance with OSHA and Fair Housing standards while maintaining tenant satisfaction
+Independent Contractor – Residential Renovation
+First Choice – Dallas, TX | Jan 2021 – May 2022
+Managed full-scope renovation projects from planning through closeout
+Directed timelines using digital project tools to ensure transparency and flow
+Developed preventive protocols to reduce post-project issues
+Aligned trade crews and vendor schedules to maintain quality execution
+Monitored milestones to ensure projects stayed on pace and within scope
+Independent Contractor – Unit Upgrades FSI – Dallas, TX | Feb 2020 – Jan 2021
+Executed interior upgrades across multifamily properties with repeatability and consistency
+Created SOPs for standardized outcomes
+Used mobile tools to monitor flow and flag issues
+Identified coordination gaps to inform planning cycles
+Maintained crew alignment and on-time delivery
+Maintenance Technician II
+American Community – Dallas, TX | Feb 2018 – Feb 2020
+Delivered service across HVAC, plumbing, electrical, and appliance systems
+Contributed to CMMS rollout and adoption
+Flagged recurring issues to support preventive planning
+Maintained detailed logs to support cost and workflow analysis
+Operations Assistant – Engineering & Launch Team
+Universal Studios – Orlando, FL | May 2014 – Feb 2018
+Supported engineering and kitchen teams during venue launch
+Liaised between technical and ops to improve design
+Assisted in live coordination and training
+Streamlined workflows to respond to guest demand
+Education
+Ana G. Méndez University – Carolina Campus
+Bachelor of Business Administration in Computer Information Systems (In Progress)
+Carolina, PR
+Certifications & Learning Path
+Completed
+Python for Everybody – University of Michigan / Coursera, 2025
+Google Project Management Certificate – Coursera, 2025
+EPA Section 608 Certification – 2018
+Computer Technician Certification – 2013
+In Progress
+Python 3 – Intermediate Track
+IBM AI Engineering Certificate – Coursera
+Projects
+GPT-Powered Agents
+AI Agents Show Room
+System Pilot – GPT-Powered Software Architecture Strategist - System Pilot Link
+Built an AI assistant that converts product ideas into formal system blueprints through guided, logic-mapped dialogue.
+Defined user-facing flows, backend logic, and modular behavior layers
+Designed for software architects, product leads, and AI toolmakers
+Blueprint Buddy – Modular GPT Instruction Architect (Prompt Canvas System) -Blueprint Buddy Link
+Created a full-scale GPT builder that transforms user intent into logic-rich, exportable instruction sets.
+Operates on a 16-block logic canvas with embedded validation engines and multi-format output
+Works with prompt engineering mastery and system logic optimization
+Meta Code Sensei – Phase-Based Python Mentor and Architecture Coach- Meta Code Sensei Link
+Developed a learning agent to guide aspiring developers through full-stack system thinking using Python.
+Built 12-phase scaffolds, project prompt modules, and real-time feedback
+Showcases instructional logic and backend design
+Software (Python)
+Make Ready Digital Board (DMRB) MakeReady Digital Board (DMRB)– Task Lifecycle Engine for Apartment Turnovers
+Engineered a workflow system to replace Excel tracking in property maintenance teams.
+Designed structured forms, task automation, and vendor/staff role logic
+Reduced unit turnover time from 13–20 days to 7 days
+Python Training Board (PTB) Software Portfolio– Interactive Python GUI Learning Environment
+Designed a hands-on platform using Tkinter and PySide6 for GUI development.
+Built modular demo launchers and experimentation flows
+Helped learners build from theory into real, system-based apps

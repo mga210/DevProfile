@@ -292,7 +292,7 @@ function initTypewriter() {
     const roleElement = document.querySelector('.role');
     if (!roleElement) return;
 
-    const roles = ['AI Systems Developer', 'Python Systems Builder', 'GPT Workflow Engineer', 'Operations Intelligence'];
+    const roles = ['AI Developer', 'Software Systems Thinker', 'Organizational Intelligence', 'Data Interpreter'];
     let currentRoleIndex = 0;
     let currentCharIndex = 0;
     let isDeleting = false;
