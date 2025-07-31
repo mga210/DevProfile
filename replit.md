@@ -16,6 +16,7 @@ This is a professional AI Systems Developer portfolio website built with vanilla
   - Actual projects (System Pilot, Blueprint Buddy, DMRB, Meta Code Sensei, Python Training Board)
   - Real skills and certifications (Google PM, Python for Everybody, EPA Section 608)
   - Current education status (Ana G. Méndez University BBA in Computer Information Systems)
+  - Professional headshot photo replacing placeholder icons throughout the site
 
 # User Preferences
 
