@@ -624,7 +624,8 @@ Independent Contractor - First Choice/FSI (Jan 2020 – May 2022)
 EDUCATION
 Ana G. Méndez University – Bachelor of Business Administration in Computer Information Systems (In Progress)
 Google Project Management Certificate – Coursera (2025)
-Python for Everybody – University of Michigan / Coursera (2025)`;
+Python for Everybody – University of Michigan / Coursera (2025)
+Python 3 – Intermediate Track (In Progress, 2025)`;
 
     const blob = new Blob([resumeContent], { type: 'text/plain' });
     const url = window.URL.createObjectURL(blob);
