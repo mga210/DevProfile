@@ -1,4 +1,4 @@
-modules = ["nodejs-20", "python-3.11"]
+modules = ["nodejs-20", "python-3.11", "postgresql-16"]
 
 [nix]
 channel = "stable-25_05"
@@ -13,15 +13,15 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Portfolio Website"
+args = "Portfolio Server"
 
 [[workflows.workflow]]
-name = "Portfolio Website"
+name = "Portfolio Server"
 author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python3 -m http.server 5000"
+args = "npx tsx server/server.ts"
 waitForPort = 5000
 
 [[ports]]

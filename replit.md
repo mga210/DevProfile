@@ -17,6 +17,12 @@ This is a professional AI Systems Developer portfolio website built with vanilla
   - Real skills and certifications (Google PM, Python for Everybody, EPA Section 608)
   - Current education status (Ana G. Méndez University BBA in Computer Information Systems)
   - Professional headshot photo replacing placeholder icons throughout the site
+- ✅ **DATABASE INTEGRATION**: Added PostgreSQL database with Node.js/Express backend
+  - Contact form submissions stored in database
+  - Portfolio view analytics tracking
+  - Project interaction tracking
+  - Skill rating system for visitor feedback
+  - REST API endpoints for all database operations
 
 # User Preferences
 
@@ -24,20 +30,44 @@ Preferred communication style: Simple, everyday language.
 
 # System Architecture
 
+## Full-Stack Architecture
+- **Frontend**: HTML/CSS/JavaScript SPA with database integration
+- **Backend**: Node.js with Express.js and TypeScript
+- **Database**: PostgreSQL with Drizzle ORM
+- **API Layer**: RESTful endpoints for data operations
+- **Real-time Features**: Analytics tracking and contact form submissions
+
 ## Frontend Architecture
-- **Static Website**: Pure HTML/CSS/JavaScript approach without any frameworks
 - **Single Page Application (SPA)**: All content is contained in a single HTML file with smooth scrolling navigation
 - **Responsive Design**: Mobile-first approach with CSS media queries for different screen sizes
 - **Component-Based Structure**: Modular JavaScript functions for different features (navigation, animations, forms, etc.)
+- **Database Integration**: JavaScript fetch API calls to backend endpoints
+
+## Backend Architecture
+- **Express.js Server**: RESTful API server with CORS support
+- **TypeScript**: Type-safe development with modern JavaScript features
+- **Drizzle ORM**: Schema-first ORM for PostgreSQL database operations
+- **Authentication**: IP-based tracking for analytics (no user authentication required)
 
 ## File Structure
 ```
 /
-├── index.html          # Main HTML structure
-├── styles.css          # All CSS styling and responsive design
-├── script.js           # JavaScript functionality and interactions
-└── assets/             # Images and other static assets
-    └── profile-icon.svg
+├── index.html              # Main HTML structure
+├── styles.css              # All CSS styling and responsive design
+├── script.js               # JavaScript functionality and database integration
+├── assets/                 # Images and other static assets
+│   ├── miguel-profile.png  # Professional headshot photo
+│   └── profile-icon.svg    # Backup SVG icon
+├── server/                 # Backend Node.js application
+│   ├── server.ts           # Express server with API endpoints
+│   ├── db.ts               # Database connection and configuration
+│   └── storage.ts          # Database operations and business logic
+├── shared/                 # Shared TypeScript types and schemas
+│   └── schema.ts           # Drizzle database schema definitions
+├── drizzle/                # Database migrations (auto-generated)
+├── drizzle.config.json     # Drizzle ORM configuration
+├── package.json            # Node.js dependencies and scripts
+└── node_modules/           # Installed packages
 ```
 
 # Key Components
