@@ -589,6 +589,9 @@ const observeElements = (selector, animationClass = 'fade-in') => {
 observeElements('.stat-item');
 observeElements('.detail-card');
 observeElements('.timeline-item');
+observeElements('.achievement-card');
+observeElements('.cert-item');
+observeElements('.service-card');
 
 // Resume download function
 function downloadResume() {
