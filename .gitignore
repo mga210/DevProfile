@@ -57,3 +57,13 @@ attached_assets/
 miguel-portfolio-website.tar.gz
 download-instructions.md
 *_portfolio.*
+
+# Jekyll files (prevent Jekyll conflicts)
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+docs/
+Gemfile
+Gemfile.lock
+_config.yml
