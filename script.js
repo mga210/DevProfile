@@ -583,6 +583,52 @@ observeElements('.stat-item');
 observeElements('.detail-card');
 observeElements('.timeline-item');
 
+// Resume download function
+function downloadResume() {
+    // Create a simple resume download (you can replace with actual resume file)
+    const resumeContent = `Miguel A. Gonzalez Almonte
+AI Developer | Software Systems Thinker | Organizational Intelligence
+Email: sllm75@hotmail.com | Phone: 787-367-9843 | Location: Plano, TX
+
+PROFESSIONAL SUMMARY
+Strategic systems thinker with a background in operations leadership and a forward trajectory in AI development, software engineering, and data analytics. Experienced in building tools that streamline processes, surface meaningful insights, and support faster, more informed decision-making.
+
+TECHNICAL SKILLS
+- AI & LLM Systems: GPT Prompt Engineering, Agent Design & Logic Flows, Decision Automation
+- Python Development: Modular Scripting, API Concepts, PySide6/Tkinter GUI Development
+- Data & Analytics: Power BI Dashboards, Insight Extraction, Conditional Logic, Workflow-Based Reporting
+
+PROJECTS
+- System Pilot: GPT-Powered Software Architecture Strategist
+- Blueprint Buddy: Modular GPT Instruction Architect  
+- MakeReady Digital Board (DMRB): Task Lifecycle Engine for Apartment Turnovers
+- Meta Code Sensei: Phase-Based Python Mentor and Architecture Coach
+- Python Training Board (PTB): Interactive Python GUI Learning Environment
+
+PROFESSIONAL EXPERIENCE
+Service Maintenance Manager - MAA (Jun 2023 – Present)
+Service Manager - RPM Living (May 2022 – Jun 2023)
+Independent Contractor - First Choice/FSI (Jan 2020 – May 2022)
+
+EDUCATION
+Ana G. Méndez University – Bachelor of Business Administration in Computer Information Systems (In Progress)
+Google Project Management Certificate – Coursera (2025)
+Python for Everybody – University of Michigan / Coursera (2025)`;
+
+    const blob = new Blob([resumeContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    a.download = 'Miguel_Gonzalez_Resume.txt';
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+    
+    showNotification('Resume downloaded successfully!', 'success');
+}
+
 // Console easter egg
 console.log(`
     ╔═══════════════════════════════════════╗

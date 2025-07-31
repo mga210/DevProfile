@@ -76,6 +76,20 @@ a {
     box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
 }
 
+.btn-outline {
+    background: transparent;
+    color: #333;
+    border: 2px solid #ddd;
+}
+
+.btn-outline:hover {
+    background: #f8f9fa;
+    color: #667eea;
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
 /* Navigation */
 .navbar {
     position: fixed;
@@ -324,6 +338,29 @@ a {
 /* Section Styles */
 section {
     padding: 100px 0;
+}
+
+/* Notification Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
 }
 
 .section-header {
