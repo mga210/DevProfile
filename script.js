@@ -379,53 +379,22 @@ window.addEventListener('load', function() {
     initializeAnalytics();
 });
 
-// Database integration functions
+// Analytics functions for static hosting
 async function initializeAnalytics() {
-    try {
-        // Track page view
-        await fetch('/api/track/view', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                section: 'home'
-            })
-        });
-    } catch (error) {
-        console.log('Analytics tracking unavailable');
-    }
+    // Analytics disabled for static hosting
+    console.log('Portfolio loaded successfully');
 }
 
-// Track section views
+// Track section views (static version)
 function trackSectionView(sectionName) {
-    fetch('/api/track/view', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            section: sectionName
-        })
-    }).catch(() => {
-        // Silently fail if API is unavailable
-    });
+    // Section tracking disabled for static hosting
+    console.log(`Viewed section: ${sectionName}`);
 }
 
-// Track project interactions
+// Track project interactions (static version)
 function trackProjectInteraction(projectName, interactionType) {
-    fetch('/api/track/project', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            projectName,
-            interactionType
-        })
-    }).catch(() => {
-        // Silently fail if API is unavailable
-    });
+    // Project interaction tracking disabled for static hosting
+    console.log(`Project interaction: ${projectName} - ${interactionType}`);
 }
 
 // Contact form submission
@@ -460,26 +429,18 @@ function handleContactForm() {
         submitBtn.disabled = true;
         
         try {
-            // Submit to database API
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            });
+            // For GitHub Pages, use Formspree (replace with your form endpoint)
+            // Alternative: Use mailto link as fallback
+            const mailtoLink = `mailto:mgonzalez869@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`)}`;
             
-            const result = await response.json();
+            // Open default email client
+            window.location.href = mailtoLink;
             
-            if (result.success) {
-                showNotification(result.message, 'success');
-                form.reset();
-            } else {
-                showNotification(result.error || 'Failed to send message', 'error');
-            }
+            showNotification('Opening your email client to send the message...', 'success');
+            form.reset();
         } catch (error) {
-            console.error('Error submitting contact form:', error);
-            showNotification('Failed to send message. Please try again.', 'error');
+            console.error('Error opening email client:', error);
+            showNotification('Please email me directly at mgonzalez869@gmail.com', 'info');
         } finally {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
