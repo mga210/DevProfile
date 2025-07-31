@@ -1,0 +1,51 @@
+<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="profileGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f7fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c3cfe2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="75" cy="75" r="75" fill="url(#bgGradient)"/>
+  
+  <!-- Profile background -->
+  <circle cx="75" cy="75" r="65" fill="url(#profileGradient)"/>
+  
+  <!-- Head -->
+  <circle cx="75" cy="55" r="20" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Body -->
+  <ellipse cx="75" cy="105" rx="30" ry="35" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Code symbols overlay -->
+  <g fill="#ffffff" opacity="0.3" font-family="monospace" font-size="12">
+    <text x="25" y="30" transform="rotate(-15 25 30)">&lt;/&gt;</text>
+    <text x="115" y="40" transform="rotate(15 115 40)">{ }</text>
+    <text x="20" y="120" transform="rotate(-10 20 120)">&lt;html&gt;</text>
+    <text x="110" y="130" transform="rotate(10 110 130)">CSS</text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="30" cy="60" r="2" fill="#ffffff" opacity="0.5"/>
+  <circle cx="120" cy="80" r="2" fill="#ffffff" opacity="0.5"/>
+  <circle cx="40" cy="100" r="1.5" fill="#ffffff" opacity="0.4"/>
+  <circle cx="110" cy="50" r="1.5" fill="#ffffff" opacity="0.4"/>
+  
+  <!-- Tech icons -->
+  <g fill="#ffffff" opacity="0.6">
+    <!-- React-like logo -->
+    <circle cx="35" cy="45" r="1" />
+    <ellipse cx="35" cy="45" rx="8" ry="3" fill="none" stroke="#ffffff" stroke-width="1"/>
+    <ellipse cx="35" cy="45" rx="8" ry="3" fill="none" stroke="#ffffff" stroke-width="1" transform="rotate(60 35 45)"/>
+    <ellipse cx="35" cy="45" rx="8" ry="3" fill="none" stroke="#ffffff" stroke-width="1" transform="rotate(-60 35 45)"/>
+    
+    <!-- Node.js-like logo -->
+    <polygon points="115,105 120,108 120,102 115,105" />
+    <polygon points="108,105 113,108 113,102 108,105" />
+  </g>
+</svg>
