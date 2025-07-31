@@ -13,22 +13,9 @@ const app = express();
 const PORT = Number(process.env.PORT) || 5000;
 
 // Middleware
-app.use(cors({
-  origin: '*',
-  credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../')));
-
-// Additional headers for Replit compatibility
-app.use((req, res, next) => {
-  res.header('X-Frame-Options', 'ALLOWALL');
-  res.header('X-Content-Type-Options', 'nosniff');
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  next();
-});
 
 // Helper function to get client IP
 function getClientIP(req: express.Request): string {
