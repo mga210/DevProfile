@@ -1,0 +1,85 @@
+✅ **Let’s kick off your personalized portfolio setup — implementation-ready and based on real data.**
+
+Here’s how I’ll proceed:
+
+* You provide your basic info below.
+* I’ll generate a structured, editable content block for each portfolio section.
+* Everything will be **production-ready**: names, skills, project cards, experience, and contact details — no placeholders.
+
+---
+
+### 🔻Please Confirm or Fill In the Following:
+
+#### 1. **👤 Name:**
+
+`Miguel A. Gonzalez Almonte` ← *(Already confirmed — please confirm if you'd like to use full name or shorten it.)*
+
+#### 2. **💼 Current Role / Job Title:**
+
+`Service Maintenance Manager & Transitioning AI Software Developer`
+Or prefer:
+`AI Developer | Python Automation Builder | Technical PM in Training`
+
+➡️ *Which one should we display as your main title?*
+
+#### 3. **🛠️ Technologies & Skills You Want Shown (on homepage & skills section):**
+
+*(Confirm or refine below list)*
+
+* Python (Intermediate)
+* PySide6 / Tkinter (GUI Apps)
+* LangChain, OpenAI API (LLM Systems)
+* Prompt Engineering (GPT Agents & Chains)
+* Data Analysis (Pandas, Power BI)
+* Workflow Automation
+* Project Management (Google PM, Agile)
+* CMMS Systems / Property Operations Logic
+
+➡️ *Add/remove any tools or libraries you'd like to highlight?*
+
+#### 4. **🚀 Projects to Feature:**
+
+*(Confirm or reorder this list for homepage cards)*
+
+* 🧠 **System Pilot** – GPT Software Architecture Strategist
+* 🧩 **Blueprint Buddy** – Modular Prompt Builder
+* 🏢 **MakeReady Digital Board (DMRB)** – Property Ops Coordination Tool
+* 📘 **Meta Code Sensei** – Python Learning Mentor (optional #4 tile)
+
+➡️ *Any others to include or remove?*
+
+#### 5. **🧾 Work Experience (Condensed for Timeline):**
+
+*(Confirm this condensed order, or ask for a rewritten version)*
+
+* MAA – Service Manager | AI tool integration, dashboard logic
+* RPM Living – Service Manager | Agile ops + vendor systems
+* First Choice – Contractor | Renovation projects
+* FSI – Contractor | SOPs + upgrade workflows
+* American Community – Maintenance Tech | Preventive logic
+* Universal Studios – Ops Assistant | Engineering support
+
+➡️ *Want this structured as a vertical timeline or grid blocks?*
+
+#### 6. **🔗 Social Media / Contact Info:**
+
+* Email: `sllm75@hotmail.com`
+* Phone: `787-367-9843`
+* LinkedIn: ✅ Confirm link
+* GitHub: 🔲 *Ready to add a public link?*
+* Notion/Portfolio: ✅ Confirm URLs if we’re embedding
+
+---
+
+### 🧱 Once You Reply:
+
+You’ll receive:
+
+1. **Updated JSON-style or HTML content blocks** to plug into any site builder
+2. **Homepage section outlines** with real labels, skills, and image slot suggestions
+3. **Modular structure** that works on GitHub Pages, Netlify, or Webflow
+
+---
+
+Just reply with your updates/confirmations to these **6 questions**.
+Then I’ll deliver your fully customized Phase 1 portfolio template.
