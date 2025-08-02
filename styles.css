@@ -1486,6 +1486,64 @@ section {
     .timeline-item {
         padding-left: 40px;
     }
+
+    /* Mobile Section Navigation - Hide all sections by default */
+    .mobile-section-nav section:not(#hero) {
+        display: none;
+    }
+
+    .mobile-section-nav section.active-section {
+        display: block;
+        animation: fadeInUp 0.3s ease;
+    }
+
+    /* Hero section always visible on mobile */
+    .mobile-section-nav #hero {
+        display: block;
+    }
+
+    /* Mobile navigation indicator */
+    .mobile-nav-indicator {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(102, 126, 234, 0.9);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Hide mobile navigation indicator on desktop */
+.mobile-nav-indicator {
+    display: none;
+}
+
+/* Ensure desktop always shows all sections normally */
+@media (min-width: 769px) {
+    .mobile-section-nav section {
+        display: block !important;
+    }
+    
+    .mobile-nav-indicator {
+        display: none !important;
+    }
 }
 
 @media (max-width: 480px) {

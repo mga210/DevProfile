@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initBackToTop();
     initSkillBars();
     initTypewriter();
+    initMobileNavigation();
 });
 
 // Navigation functionality
@@ -24,9 +25,16 @@ function initNavigation() {
 
     // Close mobile menu when clicking on a link
     navLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function(e) {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
+            
+            // Handle mobile section navigation
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                showMobileSection(targetId);
+            }
         });
     });
 
@@ -987,6 +995,72 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Mobile Section Navigation
+function initMobileNavigation() {
+    // Add mobile nav indicator to body
+    const indicator = document.createElement('div');
+    indicator.className = 'mobile-nav-indicator';
+    indicator.textContent = 'Home';
+    document.body.appendChild(indicator);
+
+    // Check if mobile and apply mobile navigation
+    function checkMobileMode() {
+        if (window.innerWidth <= 768) {
+            document.body.classList.add('mobile-section-nav');
+            showMobileSection('hero');
+        } else {
+            document.body.classList.remove('mobile-section-nav');
+            // Show all sections on desktop
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+            });
+        }
+    }
+
+    // Initial check
+    checkMobileMode();
+
+    // Check on resize
+    window.addEventListener('resize', checkMobileMode);
+}
+
+function showMobileSection(sectionId) {
+    if (window.innerWidth > 768) return; // Only for mobile
+
+    // Hide all sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.classList.remove('active-section');
+    });
+
+    // Show target section
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.classList.add('active-section');
+        
+        // Update indicator
+        const indicator = document.querySelector('.mobile-nav-indicator');
+        if (indicator) {
+            const sectionNames = {
+                'hero': 'Home',
+                'about': 'About',
+                'skills': 'Skills', 
+                'projects': 'Projects',
+                'experience': 'Experience',
+                'achievements': 'Achievements',
+                'services': 'Services',
+                'testimonials': 'Testimonials',
+                'contact': 'Contact'
+            };
+            indicator.textContent = sectionNames[sectionId] || 'Home';
+        }
+
+        // Scroll to top of page
+        window.scrollTo(0, 0);
+    }
+}
 
 // Console easter egg
 console.log(`
