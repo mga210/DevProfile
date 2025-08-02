@@ -1033,6 +1033,19 @@ function initMobileNavigation() {
 
     // Check on resize
     window.addEventListener('resize', checkMobileMode);
+
+    // Handle all anchor links for mobile navigation
+    document.addEventListener('click', function(e) {
+        const link = e.target.closest('a[href^="#"]');
+        if (link && window.innerWidth <= 768) {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            
+            // Convert 'home' to 'hero' for consistency
+            const sectionId = targetId === 'home' ? 'hero' : targetId;
+            showMobileSection(sectionId);
+        }
+    });
 }
 
 function showMobileSection(sectionId) {
