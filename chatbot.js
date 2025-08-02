@@ -29,6 +29,7 @@ class MiguelChatbot {
                     <div class="chatbot-header">
                         <h3>Chat with Miguel's AI Assistant</h3>
                         <p>Ask me about Miguel's skills and projects!</p>
+                        <button class="chatbot-close" id="chatbot-close">×</button>
                     </div>
                     
                     <div class="chatbot-messages" id="chatbot-messages">
@@ -58,8 +59,10 @@ class MiguelChatbot {
         const toggle = document.getElementById('chatbot-toggle');
         const textarea = document.getElementById('chatbot-textarea');
         const sendButton = document.getElementById('send-button');
+        const closeButton = document.getElementById('chatbot-close');
 
         toggle.addEventListener('click', () => this.toggleChatbot());
+        closeButton.addEventListener('click', () => this.closeChatbot());
         sendButton.addEventListener('click', () => this.sendMessage());
         
         textarea.addEventListener('keypress', (e) => {
@@ -85,6 +88,12 @@ class MiguelChatbot {
         } else {
             toggle.classList.remove('open');
             window.classList.remove('open');
+        }
+    }
+
+    closeChatbot() {
+        if (this.isOpen) {
+            this.toggleChatbot();
         }
     }
 
