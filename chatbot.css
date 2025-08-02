@@ -1,9 +1,9 @@
 /* Chatbot Widget Styles */
 .chatbot-container {
     position: fixed;
-    bottom: 20px;
+    bottom: 90px;
     right: 20px;
-    z-index: 9999;
+    z-index: 10000;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -251,7 +251,13 @@
     
     .chatbot-container {
         right: 20px;
-        bottom: 20px;
+        bottom: 90px;
+    }
+    
+    /* Move back-to-top button on mobile */
+    body .back-to-top {
+        right: 20px !important;
+        bottom: 160px !important;
     }
 }
 

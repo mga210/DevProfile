@@ -215,22 +215,24 @@ class MiguelChatbot {
 }
 
 // Initialize chatbot when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Wait a moment to ensure all other scripts have loaded
-    setTimeout(() => {
+function initializeChatbot() {
+    // Check if chatbot already exists
+    if (document.getElementById('chatbot-container')) {
+        return;
+    }
+    
+    try {
         new MiguelChatbot();
-    }, 100);
-});
+        console.log('Chatbot initialized successfully');
+    } catch (error) {
+        console.error('Error initializing chatbot:', error);
+    }
+}
 
-// Also initialize if DOM is already loaded
+// Initialize based on document state
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => {
-            new MiguelChatbot();
-        }, 100);
-    });
+    document.addEventListener('DOMContentLoaded', initializeChatbot);
 } else {
-    setTimeout(() => {
-        new MiguelChatbot();
-    }, 100);
+    // Document is already loaded
+    setTimeout(initializeChatbot, 500);
 }

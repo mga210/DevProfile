@@ -1232,7 +1232,7 @@ section {
 .back-to-top {
     position: fixed;
     bottom: 2rem;
-    right: 2rem;
+    right: 90px;
     width: 50px;
     height: 50px;
     background: #667eea;
@@ -1247,7 +1247,7 @@ section {
     transition: all 0.3s ease;
     opacity: 0;
     visibility: hidden;
-    z-index: 1000;
+    z-index: 9998;
 }
 
 .back-to-top.visible {
