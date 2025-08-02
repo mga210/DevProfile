@@ -315,8 +315,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Project card hover effects
-document.querySelectorAll('.project-card').forEach(card => {
+// Project card hover effects and click handling
+document.querySelectorAll('.project-card, .project-item').forEach(card => {
     card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-10px) scale(1.02)';
     });
@@ -324,7 +324,81 @@ document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseleave', function() {
         this.style.transform = 'translateY(0) scale(1)';
     });
+    
+    // Add click handler to open project modal
+    card.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openProjectModal(this);
+    });
 });
+
+// Prevent project links from navigating away
+document.querySelectorAll('.project-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (this.getAttribute('aria-label') === 'View Live Demo') {
+            showNotification('Live demo coming soon!', 'info');
+        } else if (this.getAttribute('aria-label') === 'View Source Code') {
+            showNotification('Source code available on request!', 'info');
+        }
+    });
+});
+
+// Project modal functions
+function openProjectModal(projectCard) {
+    const title = projectCard.querySelector('.project-title').textContent;
+    const description = projectCard.querySelector('.project-description').textContent;
+    const techTags = Array.from(projectCard.querySelectorAll('.tech-tag')).map(tag => tag.textContent);
+    
+    // Create modal content
+    const modalContent = `
+        <div class="project-modal-header">
+            <h2>${title}</h2>
+            <button class="close-modal" onclick="closeProjectModal()" aria-label="Close">×</button>
+        </div>
+        <div class="project-modal-body">
+            <div class="project-modal-description">
+                <p>${description}</p>
+            </div>
+            <div class="project-modal-tech">
+                <h3>Technologies Used:</h3>
+                <div class="tech-tags">
+                    ${techTags.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                </div>
+            </div>
+            <div class="project-modal-actions">
+                <button class="btn btn-primary" onclick="showNotification('Live demo coming soon!', 'info')">
+                    <i class="fas fa-external-link-alt"></i> View Live Demo
+                </button>
+                <button class="btn btn-secondary" onclick="showNotification('Source code available on request!', 'info')">
+                    <i class="fab fa-github"></i> View Source Code
+                </button>
+            </div>
+        </div>
+    `;
+    
+    // Show modal
+    const modal = document.getElementById('projectModal');
+    const modalBody = modal.querySelector('.modal-content');
+    modalBody.innerHTML = modalContent;
+    modal.style.display = 'block';
+    
+    // Add animation class
+    setTimeout(() => {
+        modal.classList.add('show');
+    }, 10);
+}
+
+function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    modal.classList.remove('show');
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300);
+}
 
 // Add loading animation
 window.addEventListener('load', function() {
