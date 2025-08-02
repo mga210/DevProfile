@@ -5,7 +5,7 @@ This is a professional AI Systems Developer portfolio website built with vanilla
 ## Recent Changes (August 2, 2025)
 - ✅ **AI CHATBOT INTEGRATION COMPLETE**: Added intelligent chatbot widget with dual-mode functionality
   - Floating chat bubble in bottom right corner with toggle functionality
-  - Replit: OpenAI GPT-3.5 integration with secure server-side API handling and professional system prompt
+  - Replit: OpenAI GPT-3.5 integration with secure server-side API handling and enhanced authentic system prompt
   - GitHub Pages: Intelligent static response system for portfolio inquiries
   - Comprehensive knowledge base about Miguel's skills, projects, and experience
   - Mobile-responsive design with typing indicators, conversation history, and close button
