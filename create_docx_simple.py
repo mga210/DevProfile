@@ -29,7 +29,7 @@ def create_simple_docx_resume():
     
     contact = doc.add_paragraph("Plano, TX • 787-367-9843 • mgonzalez869@gmail.com")
     contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    contact.space_after = Pt(6)
+    contact.paragraph_format.space_after = Pt(6)
     
     # Links paragraph with hyperlinks
     links_para = doc.add_paragraph()
@@ -39,7 +39,7 @@ def create_simple_docx_resume():
     links_para.add_run("LinkedIn: https://www.linkedin.com/in/miguel-gonzalez-8a389791\n")
     links_para.add_run("Portfolio: https://mga210.github.io/DevProfile/\n") 
     links_para.add_run("GitHub: https://github.com/mga210")
-    links_para.space_after = Pt(12)
+    links_para.paragraph_format.space_after = Pt(12)
     
     # Professional tagline
     tagline = doc.add_paragraph("AI Systems Builder | GPT-Powered Workflow Architect | Operational Intelligence Technologist")
@@ -47,7 +47,7 @@ def create_simple_docx_resume():
     tagline_run = tagline.runs[0]
     tagline_run.font.size = Pt(12)
     tagline_run.bold = True
-    tagline.space_after = Pt(12)
+    tagline.paragraph_format.space_after = Pt(12)
     
     # Professional Summary
     summary_heading = doc.add_heading("PROFESSIONAL SUMMARY", 1)
@@ -58,7 +58,8 @@ Though I've never held a formal software title, I've architected AI assistants, 
 
 Now seeking roles where I can continue designing agent-powered workflows, internal tools, and smart coordination systems — especially in environments that value practical intelligence, not just pedigree."""
     
-    doc.add_paragraph(summary_text).space_after = Pt(12)
+    summary_para = doc.add_paragraph(summary_text)
+    summary_para.paragraph_format.space_after = Pt(12)
     
     # Skills Summary
     skills_heading = doc.add_heading("SKILLS SUMMARY", 1)

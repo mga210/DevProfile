@@ -6,7 +6,8 @@ Script to create a proper DOCX resume file using python-docx
 from docx import Document
 from docx.shared import Inches, Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.oxml.shared import OxmlElement, qn
+from docx.oxml.parser import OxmlElement
+from docx.oxml.ns import qn
 from docx.oxml.ns import nsdecls
 from docx.oxml import parse_xml
 
@@ -87,7 +88,7 @@ def create_docx_resume():
     
     contact = doc.add_paragraph("Plano, TX • 787-367-9843 • mgonzalez869@gmail.com")
     contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    contact.space_after = Pt(6)
+    contact.paragraph_format.space_after = Pt(6)
     
     # Create paragraph with clickable links
     links = doc.add_paragraph()
@@ -100,7 +101,7 @@ def create_docx_resume():
     links.add_run(" • ")
     add_hyperlink(links, "https://github.com/mga210", "GitHub")
     
-    links.space_after = Pt(12)
+    links.paragraph_format.space_after = Pt(12)
     
     # Professional tagline
     tagline = doc.add_paragraph("AI Systems Builder | GPT-Powered Workflow Architect | Operational Intelligence Technologist")
@@ -108,7 +109,7 @@ def create_docx_resume():
     tagline_run = tagline.runs[0]
     tagline_run.font.size = Pt(12)
     tagline_run.bold = True
-    tagline.space_after = Pt(12)
+    tagline.paragraph_format.space_after = Pt(12)
     
     # Professional Summary
     add_heading_with_style(doc, "PROFESSIONAL SUMMARY", 1)
@@ -119,7 +120,8 @@ Though I've never held a formal software title, I've architected AI assistants, 
 
 Now seeking roles where I can continue designing agent-powered workflows, internal tools, and smart coordination systems — especially in environments that value practical intelligence, not just pedigree."""
     
-    doc.add_paragraph(summary_text).space_after = Pt(12)
+    summary_para = doc.add_paragraph(summary_text)
+    summary_para.paragraph_format.space_after = Pt(12)
     
     # Skills Summary
     add_heading_with_style(doc, "SKILLS SUMMARY", 1)
@@ -152,7 +154,7 @@ Now seeking roles where I can continue designing agent-powered workflows, intern
         
         for skill in skills:
             skill_p = doc.add_paragraph(f"• {skill}")
-            skill_p.space_after = Pt(3)
+            skill_p.paragraph_format.space_after = Pt(3)
     
     # Professional Experience
     add_heading_with_style(doc, "PROFESSIONAL EXPERIENCE", 1)
@@ -189,7 +191,7 @@ Now seeking roles where I can continue designing agent-powered workflows, intern
     edu_run = edu_p.add_run("Bachelor of Business Administration in Computer Information Systems")
     edu_run.bold = True
     edu_p.add_run("\nAna G. Méndez University – Carolina, PR (In Progress)")
-    edu_p.space_after = Pt(6)
+    edu_p.paragraph_format.space_after = Pt(6)
     
     cert_p = doc.add_paragraph()
     cert_run = cert_p.add_run("Completed Certifications:")
@@ -204,7 +206,7 @@ Now seeking roles where I can continue designing agent-powered workflows, intern
     
     for cert in certifications:
         cert_bullet = doc.add_paragraph(f"• {cert}")
-        cert_bullet.space_after = Pt(3)
+        cert_bullet.paragraph_format.space_after = Pt(3)
     
     # Key Projects
     add_heading_with_style(doc, "KEY PROJECTS", 1)
@@ -232,11 +234,11 @@ Now seeking roles where I can continue designing agent-powered workflows, intern
         
         proj_type_p = doc.add_paragraph(project_type)
         proj_type_p.runs[0].italic = True
-        proj_type_p.space_after = Pt(3)
+        proj_type_p.paragraph_format.space_after = Pt(3)
         
         for bullet in bullets:
             bullet_p = doc.add_paragraph(f"• {bullet}")
-            bullet_p.space_after = Pt(3)
+            bullet_p.paragraph_format.space_after = Pt(3)
     
     # Save the document
     doc.save('resume.docx')
