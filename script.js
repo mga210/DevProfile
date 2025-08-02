@@ -553,6 +553,11 @@ These views are not just visual — they define system behavior and readiness lo
             description: 'Secure login system with username and password fields. Demonstrates form handling, input validation, and user authentication patterns in Python GUI development.'
         },
         {
+            src: 'assets/python-gui-mode-selection.png',
+            title: 'GUI Framework Selection',
+            description: 'Framework selection interface allowing users to choose between PySide6 Showcase, Tkinter Showcase, or Advanced GUI Projects. Demonstrates application architecture with multiple GUI framework support and modular design patterns.'
+        },
+        {
             src: 'assets/python-core-widgets.png',
             title: 'Core Widgets - PySide6 Showcase',
             description: 'Essential PySide6 widgets including QPushbutton, QSlider, QCheckbox, QLineEdit, QCombobox, QFileDialog, QTableWidget, and QTextEdit. Each widget demonstrates fundamental GUI programming concepts.'
