@@ -1568,7 +1568,6 @@ section {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     border: none;
     position: relative;
-    overflow: hidden;
 }
 
 #projectModal .modal-content::before {
@@ -1652,7 +1651,6 @@ section {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     border: 1px solid #e2e8f0;
     position: relative;
-    overflow: hidden;
 }
 
 .project-modal-detailed::before {
@@ -1759,7 +1757,6 @@ section {
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    overflow: hidden;
 }
 
 .project-modal-tech .tech-tag::before {
@@ -1803,7 +1800,6 @@ section {
     font-weight: 600;
     text-transform: none;
     position: relative;
-    overflow: hidden;
     cursor: pointer;
 }
 
