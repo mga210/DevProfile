@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initNavigation();
     initScrollAnimations();
-    initContactForm();
+    // initContactForm(); // Removed to prevent form interference
     initBackToTop();
     initSkillBars();
     initTypewriter();
@@ -103,79 +103,7 @@ function initScrollAnimations() {
     });
 }
 
-// Contact form functionality
-function initContactForm() {
-    // Simple form validation without interfering with Formspree submission
-    const contactForm = document.getElementById('contact-form');
-    
-    if (contactForm) {
-        // Add basic client-side validation
-        const inputs = contactForm.querySelectorAll('input[required], textarea[required]');
-        inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-                if (this.value.trim() === '') {
-                    this.style.borderColor = '#e74c3c';
-                } else {
-                    this.style.borderColor = '#ddd';
-                }
-            });
-        });
-    }
-}
-
-function validateForm(data) {
-    const errors = [];
-
-    if (!data.name || data.name.trim().length < 2) {
-        errors.push('Name must be at least 2 characters long');
-    }
-
-    if (!data.email || !isValidEmail(data.email)) {
-        errors.push('Please enter a valid email address');
-    }
-
-    if (!data.subject || data.subject.trim().length < 5) {
-        errors.push('Subject must be at least 5 characters long');
-    }
-
-    if (!data.message || data.message.trim().length < 10) {
-        errors.push('Message must be at least 10 characters long');
-    }
-
-    if (errors.length > 0) {
-        showNotification('Please fix the following errors:\n' + errors.join('\n'), 'error');
-        return false;
-    }
-
-    return true;
-}
-
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-function submitForm(data) {
-    const submitButton = document.querySelector('#contact-form button[type="submit"]');
-    const originalText = submitButton.innerHTML;
-    
-    // Show loading state
-    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    submitButton.disabled = true;
-
-    // Simulate API call
-    setTimeout(() => {
-        // Reset button
-        submitButton.innerHTML = originalText;
-        submitButton.disabled = false;
-
-        // Show success message
-        showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-        
-        // Reset form
-        document.getElementById('contact-form').reset();
-    }, 2000);
-}
+// Contact form - No JavaScript interference, let Formspree handle everything
 
 function showNotification(message, type = 'info') {
     // Create notification element
