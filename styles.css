@@ -1964,6 +1964,16 @@ section {
     object-fit: contain;
 }
 
+.gallery-content:not(:hover) .screenshot-image-section img[src*="CleanShot"] {
+    max-height: 800px;
+    width: 100%;
+    object-position: center center;
+    margin: auto;
+    align-self: center;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
 .gallery-content:not(:hover) .screenshot-info-section {
     flex: 1.2;
     padding: 35px;
@@ -2094,7 +2104,12 @@ section {
 
 .screenshot-image-section img[src*="CleanShot"] {
     object-fit: contain;
-    max-height: 500px;
+    max-height: 600px;
+    width: 100%;
+    object-position: center center;
+    margin: auto;
+    align-self: center;
+    flex-shrink: 0;
 }
 
 .screenshot-image-section img[src*="python-core-widgets"] {
@@ -2287,6 +2302,16 @@ section {
     }
     
     .gallery-content:not(:hover) .screenshot-image-section img[src*="python-core-widgets"] {
+        max-height: 450px;
+        width: 100%;
+        object-position: center center;
+        margin: auto;
+        align-self: center;
+        flex-shrink: 0;
+        object-fit: contain;
+    }
+    
+    .gallery-content:not(:hover) .screenshot-image-section img[src*="CleanShot"] {
         max-height: 450px;
         width: 100%;
         object-position: center center;
