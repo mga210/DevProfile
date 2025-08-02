@@ -384,7 +384,7 @@ function openProjectModal(projectCard) {
                 </div>
             </div>
             <div class="project-modal-actions">
-                <button class="btn btn-primary" onclick="showNotification('Live demo coming soon!', 'info')">
+                <button class="btn btn-primary" onclick="openLiveDemo('${title}')">
                     <i class="fas fa-external-link-alt"></i> View Live Demo
                 </button>
                 <button class="btn btn-secondary" onclick="showNotification('Source code available on request!', 'info')">
@@ -412,6 +412,20 @@ function closeProjectModal() {
     setTimeout(() => {
         modal.style.display = 'none';
     }, 300);
+}
+
+function openLiveDemo(projectTitle) {
+    const demoUrls = {
+        'SystemPilot - AI Workflow Optimization Agent': 'https://chatgpt.com/g/g-6856d43a6a488191a911d252286987e2-systempilot',
+        'Blueprint Buddy - Modular GPT Instruction Architect': 'https://chatgpt.com/g/g-67ecc53d1854819192a6c8a8bf0d7d4b-metacosensei',
+        'Meta Code Sensei - Python Mentor and Architecture Coach': 'https://chatgpt.com/g/g-67ecc53d1854819192a6c8a8bf0d7d4b-metacosensei'
+    };
+    
+    if (demoUrls[projectTitle]) {
+        window.open(demoUrls[projectTitle], '_blank');
+    } else {
+        showNotification('Live demo coming soon!', 'info');
+    }
 }
 
 // Add loading animation
