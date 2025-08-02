@@ -1959,11 +1959,14 @@ section {
     min-height: 600px;
     width: 100%;
     object-position: center center;
-    margin: auto;
+    margin: auto 0;
     align-self: center;
     flex-shrink: 0;
     object-fit: contain;
     display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .gallery-content:not(:hover) .screenshot-image-section img[src*="CleanShot"] {
@@ -2121,10 +2124,13 @@ section {
     width: 100%;
     max-width: 100%;
     object-position: center center;
-    margin: auto;
+    margin: auto 0;
     align-self: center;
     flex-shrink: 0;
     display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .screenshot-caption {
@@ -2310,11 +2316,14 @@ section {
         min-height: 350px;
         width: 100%;
         object-position: center center;
-        margin: auto;
+        margin: auto 0;
         align-self: center;
         flex-shrink: 0;
         object-fit: contain;
         display: block;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .gallery-content:not(:hover) .screenshot-image-section img[src*="CleanShot"] {
