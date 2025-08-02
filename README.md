@@ -4,7 +4,7 @@ AI Systems Developer portfolio showcasing projects, skills, and professional exp
 
 ## 🚀 Live Site
 
-Visit the live portfolio: [https://YOUR_USERNAME.github.io/DevProfile/](https://YOUR_USERNAME.github.io/DevProfile/)
+Visit the live portfolio: [https://YOUR_USERNAME.github.io/DevProfile/](https://mga210.github.io/DevProfile/)
 
 ## 📋 Features
 
