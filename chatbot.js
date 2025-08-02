@@ -13,6 +13,7 @@ class MiguelChatbot {
         this.createChatbotHTML();
         this.attachEventListeners();
         this.addWelcomeMessage();
+        this.autoOpenWelcome();
     }
 
     createChatbotHTML() {
@@ -92,7 +93,7 @@ class MiguelChatbot {
     }
 
     addWelcomeMessage() {
-        const welcomeMessage = "Hi! I'm Miguel's AI assistant. I can tell you about his skills in AI systems development, Python programming, project management, and his various projects like System Pilot, Blueprint Buddy, and the DMRB system. What would you like to know?";
+        const welcomeMessage = "👋 Hi! I'm Miguel's AI assistant. I can help you learn about:\n\n🤖 AI Systems Development\n🐍 Python Programming & GUIs\n📊 Data Analysis & Automation\n🚀 His projects like System Pilot, Blueprint Buddy, and DMRB\n\nWhat would you like to know?";
         this.addMessage(welcomeMessage, 'bot');
     }
 
@@ -211,6 +212,30 @@ class MiguelChatbot {
             this.isLoading = false;
             sendButton.disabled = false;
         }
+    }
+
+    autoOpenWelcome() {
+        const toggle = document.getElementById('chatbot-toggle');
+        
+        // Add pulsing animation to get attention
+        setTimeout(() => {
+            toggle.classList.add('pulse');
+        }, 1000);
+        
+        // Auto-open chatbot after 3 seconds, then close after 10 seconds
+        setTimeout(() => {
+            if (!this.isOpen) {
+                toggle.classList.remove('pulse');
+                this.toggleChatbot();
+                
+                // Auto-close after 10 seconds
+                setTimeout(() => {
+                    if (this.isOpen) {
+                        this.toggleChatbot();
+                    }
+                }, 10000);
+            }
+        }, 3000);
     }
 }
 
