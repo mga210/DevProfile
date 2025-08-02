@@ -62,6 +62,8 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
+// Analytics are now handled by Counter.dev - no backend needed
+
 // Get all contacts (for admin use)
 app.get('/api/contacts', async (req, res) => {
   try {
