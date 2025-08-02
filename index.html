@@ -610,7 +610,24 @@
                                 <h4>What DMRB Does</h4>
                                 <p>DMRB is your digital command center for apartment turnovers — replacing messy spreadsheets with a real-time, always-correct board that tells you what needs doing, who's doing it, if anything's stuck, and when a unit is truly ready.</p>
                                 
-                                <h4>Core Features</h4>
+                                <h4>❤️ CORE DIALOGS (Lifeblood of the system)</h4>
+                                <p>Each dialog triggers system mutations and lifecycle orchestration:</p>
+                                <ul>
+                                    <li><strong>➕ Add Unit Dialog (The Heartbeat):</strong> Creates lifecycle state from user input, injects task templates into unit_lifecycle and unit_tasks, emits unit_created(payload) — system-wide sync trigger. Source: dialog_add_unit.py → add_unit_dialog</li>
+                                    <li><strong>📥 Import Units (The Mass Valve):</strong> Batch unit creation from .xlsx, deduplicates, applies templates, injects state. Source: dialog_import.py → unit_import_dialog</li>
+                                    <li><strong>➕ Add Task (The Rhythm Engine):</strong> Defines task templates, offsets, Final Walk constraints, drives all unit task sequencing. Source: dialog_add_task.py → add_task_dialog</li>
+                                    <li><strong>⚙ Manage Dropdown (The Blood Chemistry):</strong> Manages roles, statuses, and logic-bound labels, lives in lookup.db and controls validation across views. Source: dialog_lookup.py → Manage_dropdown_dialog</li>
+                                </ul>
+                                
+                                <h4>🧠 CORE VIEWS (Memory + Execution Control)</h4>
+                                <p>These views are not just visual — they define system behavior and readiness logic:</p>
+                                <ul>
+                                    <li><strong>📁 Units View (Central Consciousness):</strong> Stores unit lifecycle, readiness %, and task sync. Feeds: dashboards, delay views, task boards. Reacts to task completion events. Source: view_unit.py → unit_view</li>
+                                    <li><strong>⚒ Task Template View (Procedural Memory):</strong> Encodes readiness logic through task categories + offsets. Central to Final Walk logic and delay prediction. Source: view_task_template.py → task_template_view</li>
+                                    <li><strong>🏘 Property/Unit DB View (Long-Term Memory):</strong> Reference for unit structure: square footage, type. Ensures valid template-task injection. Source: view_property_unit_db.py → property_unit_db_view</li>
+                                </ul>
+                                
+                                <h4>Features</h4>
                                 <ul>
                                     <li><strong>Make Ready Board:</strong> Color-coded unit stages (Scheduled, In Progress, Blocked, Final Walk, Ready) with real-time progress tracking</li>
                                     <li><strong>Smart Task Scheduling:</strong> Automatically loads correct tasks and schedules them across 7 days when units are added</li>
