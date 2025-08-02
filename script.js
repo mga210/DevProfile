@@ -428,6 +428,147 @@ function openLiveDemo(projectTitle) {
     }
 }
 
+// Screenshot Gallery Functions
+let currentScreenshotIndex = 0;
+let currentScreenshots = [];
+
+const screenshotData = {
+    'DMRB': [
+        {
+            src: 'assets/dmrb-login.png',
+            title: 'Login Interface',
+            description: 'Role-based access control with dedicated portals for different user types including MakeReady Coordinators, Property Managers, Leasing Agents, and more.'
+        }
+        // Additional DMRB screenshots can be added here
+    ],
+    'Python Training Board': [
+        {
+            src: 'assets/python-training-board.png',
+            title: 'Main Training Interface',
+            description: 'Interactive Python learning environment with GUI components built using Tkinter and PySide6 for hands-on development experience.'
+        }
+        // Additional Python Training Board screenshots can be added here
+    ]
+};
+
+function openScreenshotGallery(projectName) {
+    const screenshots = screenshotData[projectName] || [];
+    
+    if (screenshots.length === 0) {
+        showNotification('Screenshots coming soon!', 'info');
+        return;
+    }
+    
+    currentScreenshots = screenshots;
+    currentScreenshotIndex = 0;
+    
+    const gallery = document.getElementById('screenshotGallery');
+    const title = document.getElementById('galleryTitle');
+    
+    title.textContent = `${projectName} - Screenshots`;
+    
+    updateScreenshotDisplay();
+    createThumbnails();
+    
+    gallery.style.display = 'block';
+    setTimeout(() => {
+        gallery.classList.add('show');
+    }, 10);
+}
+
+function closeScreenshotGallery() {
+    const gallery = document.getElementById('screenshotGallery');
+    gallery.classList.remove('show');
+    setTimeout(() => {
+        gallery.style.display = 'none';
+    }, 300);
+}
+
+function updateScreenshotDisplay() {
+    if (currentScreenshots.length === 0) return;
+    
+    const screenshot = currentScreenshots[currentScreenshotIndex];
+    const img = document.getElementById('currentScreenshot');
+    const title = document.getElementById('screenshotTitle');
+    const description = document.getElementById('screenshotDescription');
+    const currentIndex = document.getElementById('currentIndex');
+    const totalScreenshots = document.getElementById('totalScreenshots');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    
+    img.src = screenshot.src;
+    img.alt = screenshot.title;
+    title.textContent = screenshot.title;
+    description.textContent = screenshot.description;
+    currentIndex.textContent = currentScreenshotIndex + 1;
+    totalScreenshots.textContent = currentScreenshots.length;
+    
+    // Update navigation buttons
+    prevBtn.disabled = currentScreenshotIndex === 0;
+    nextBtn.disabled = currentScreenshotIndex === currentScreenshots.length - 1;
+    
+    // Update thumbnail selection
+    document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentScreenshotIndex);
+    });
+}
+
+function previousScreenshot() {
+    if (currentScreenshotIndex > 0) {
+        currentScreenshotIndex--;
+        updateScreenshotDisplay();
+    }
+}
+
+function nextScreenshot() {
+    if (currentScreenshotIndex < currentScreenshots.length - 1) {
+        currentScreenshotIndex++;
+        updateScreenshotDisplay();
+    }
+}
+
+function createThumbnails() {
+    const container = document.querySelector('.screenshot-thumbnails');
+    container.innerHTML = '';
+    
+    currentScreenshots.forEach((screenshot, index) => {
+        const thumb = document.createElement('img');
+        thumb.src = screenshot.src;
+        thumb.alt = screenshot.title;
+        thumb.className = 'thumbnail';
+        thumb.onclick = () => {
+            currentScreenshotIndex = index;
+            updateScreenshotDisplay();
+        };
+        container.appendChild(thumb);
+    });
+}
+
+// Close gallery on outside click
+document.getElementById('screenshotGallery').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeScreenshotGallery();
+    }
+});
+
+// Keyboard navigation for gallery
+document.addEventListener('keydown', function(e) {
+    const gallery = document.getElementById('screenshotGallery');
+    if (gallery.style.display === 'block') {
+        switch(e.key) {
+            case 'Escape':
+                closeScreenshotGallery();
+                break;
+            case 'ArrowLeft':
+                previousScreenshot();
+                break;
+            case 'ArrowRight':
+                nextScreenshot();
+                break;
+        }
+    }
+});
+
 // Add loading animation
 window.addEventListener('load', function() {
     // Hide any loading spinner if present

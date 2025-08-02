@@ -598,8 +598,8 @@
                             <button class="project-btn primary" onclick="openProjectModal(this.closest('.project-card'))">
                                 <i class="fas fa-info-circle"></i> View Details
                             </button>
-                            <button class="project-btn secondary" onclick="showNotification('Live demo coming soon!', 'info')">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            <button class="project-btn secondary" onclick="openScreenshotGallery('DMRB')">
+                                <i class="fas fa-images"></i> View Screenshots
                             </button>
                             <button class="project-btn secondary" onclick="showNotification('Source code available on request!', 'info')">
                                 <i class="fab fa-github"></i> GitHub
@@ -660,8 +660,8 @@
                                 <button class="project-btn primary" onclick="openProjectModal(this.closest('.project-card'))">
                                     <i class="fas fa-info-circle"></i> View Details
                                 </button>
-                                <button class="project-btn secondary" onclick="showNotification('Live demo coming soon!', 'info')">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                <button class="project-btn secondary" onclick="openScreenshotGallery('Python Training Board')">
+                                    <i class="fas fa-images"></i> View Screenshots
                                 </button>
                                 <button class="project-btn secondary" onclick="showNotification('Source code available on request!', 'info')">
                                     <i class="fab fa-github"></i> GitHub
@@ -1420,6 +1420,39 @@
 
     <!-- Counter.dev Analytics -->
     <script src="https://cdn.counter.dev/script.js" data-id="19dfa4e3-c717-41a3-845e-548fdd6d50e5" data-utcoffset="-5"></script>
+
+    <!-- Screenshot Gallery Modal -->
+    <div id="screenshotGallery" class="modal gallery-modal">
+        <div class="modal-content gallery-content">
+            <div class="gallery-header">
+                <h2 id="galleryTitle">Project Screenshots</h2>
+                <button class="close-modal" onclick="closeScreenshotGallery()" aria-label="Close">×</button>
+            </div>
+            <div class="gallery-body">
+                <div class="screenshot-navigation">
+                    <button class="nav-btn prev-btn" onclick="previousScreenshot()" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="screenshot-container">
+                        <img id="currentScreenshot" src="" alt="" loading="lazy">
+                        <div class="screenshot-caption">
+                            <h4 id="screenshotTitle"></h4>
+                            <p id="screenshotDescription"></p>
+                        </div>
+                    </div>
+                    <button class="nav-btn next-btn" onclick="nextScreenshot()" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="screenshot-thumbnails">
+                    <!-- Thumbnails will be inserted dynamically -->
+                </div>
+                <div class="screenshot-counter">
+                    <span id="currentIndex">1</span> / <span id="totalScreenshots">1</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Project Details Modal -->
     <div id="projectModal" class="modal-overlay" style="display: none;">
