@@ -543,11 +543,35 @@ These views are not just visual — they define system behavior and readiness lo
     ],
     'Python Training Board': [
         {
-            src: 'assets/python-training-board.png',
-            title: 'Main Training Interface',
-            description: 'Interactive Python learning environment with GUI components built using Tkinter and PySide6 for hands-on development experience.'
+            src: 'assets/python-welcome.png',
+            title: 'Welcome Screen',
+            description: 'Clean, professional welcome interface for the Python Training Board application. Built with modern GUI design principles using PySide6 for a native desktop experience.'
+        },
+        {
+            src: 'assets/python-login.png',
+            title: 'User Authentication',
+            description: 'Secure login system with username and password fields. Demonstrates form handling, input validation, and user authentication patterns in Python GUI development.'
+        },
+        {
+            src: 'assets/python-core-widgets.png',
+            title: 'Core Widgets - PySide6 Showcase',
+            description: 'Essential PySide6 widgets including QPushbutton, QSlider, QCheckbox, QLineEdit, QCombobox, QFileDialog, QTableWidget, and QTextEdit. Each widget demonstrates fundamental GUI programming concepts.'
+        },
+        {
+            src: 'assets/python-intermediate-widgets.png',
+            title: 'Intermediate Widgets',
+            description: 'Advanced PySide6 components: QProgressbar, QTabWidget, QSpinbox, QFormLayout, QMessagebox, QInputDialog, QRadioButton, QListWidget, QTreeView, and QDockWidget for complex interface design.'
+        },
+        {
+            src: 'assets/python-advanced-patterns.png',
+            title: 'Advanced Patterns & System Integration',
+            description: 'Sophisticated GUI patterns including QTimer for animations, QThread for background processing, QStackedWidget for navigation, custom Layouts, Drag & Drop functionality, QShortcut for hotkeys, QClipboard for system integration, QSystemTray for background apps, and custom dialogs.'
+        },
+        {
+            src: 'assets/python-tkinter-demo.png',
+            title: 'Tkinter Demo Comparison',
+            description: 'Side-by-side comparison showing Tkinter implementation alongside PySide6. Demonstrates Core Widgets (Button, Slider, Checkbox, Entry), Intermediate Widgets (Progressbar, Notebook, Spinbox), and Advanced Patterns (Timer, Thread, Stack, Layouts) across both frameworks.'
         }
-        // Additional Python Training Board screenshots can be added here
     ]
 };
 
