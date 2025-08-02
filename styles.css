@@ -1955,11 +1955,13 @@ section {
 }
 
 .gallery-content:not(:hover) .screenshot-image-section img[src*="python-core-widgets"] {
-    max-height: 700px;
+    max-height: 800px;
+    width: 100%;
     object-position: center center;
-    margin: auto 0;
+    margin: auto;
     align-self: center;
     flex-shrink: 0;
+    object-fit: contain;
 }
 
 .gallery-content:not(:hover) .screenshot-info-section {
@@ -2096,12 +2098,12 @@ section {
 }
 
 .screenshot-image-section img[src*="python-core-widgets"] {
-    object-fit: scale-down;
-    max-height: 500px;
-    width: auto;
+    object-fit: contain;
+    max-height: 600px;
+    width: 100%;
     max-width: 100%;
     object-position: center center;
-    margin: auto 0;
+    margin: auto;
     align-self: center;
     flex-shrink: 0;
 }
@@ -2285,11 +2287,13 @@ section {
     }
     
     .gallery-content:not(:hover) .screenshot-image-section img[src*="python-core-widgets"] {
-        max-height: 400px;
+        max-height: 450px;
+        width: 100%;
         object-position: center center;
-        margin: auto 0;
+        margin: auto;
         align-self: center;
         flex-shrink: 0;
+        object-fit: contain;
     }
     
     /* Mobile individual adjustments */
