@@ -438,8 +438,62 @@ const screenshotData = {
             src: 'assets/dmrb-login.png',
             title: 'Login Interface',
             description: 'Role-based access control with dedicated portals for different user types including MakeReady Coordinators, Property Managers, Leasing Agents, and more.'
+        },
+        {
+            src: 'assets/dmrb-dashboard.png',
+            title: 'Service Manager Console',
+            description: 'Main dashboard showing unit status across all stages: Notice (18), In Progress (10), Ready (10), and Completed (10). Features real-time status tracking with color-coded unit organization.'
+        },
+        {
+            src: 'assets/dmrb-mr-board.png',
+            title: 'MR Board - Unit Detail View',
+            description: 'Individual unit management interface showing task categorization (Core, Regular, Optional), completion tracking, and unit lifecycle details including DTBR, status, and completion percentage.'
+        },
+        {
+            src: 'assets/dmrb-task-manager.png',
+            title: 'Task Manager',
+            description: 'Task template creation and management system with categorization (Core, Regular, Optional), offset day scheduling, and task lifecycle controls for system-wide task deployment.'
+        },
+        {
+            src: 'assets/dmrb-lookup-editor.png',
+            title: 'Lookup Editor',
+            description: 'System configuration interface for managing Properties, Vendors, Employees, and Statuses. Provides centralized control of all lookup values used throughout the application.'
+        },
+        {
+            src: 'assets/dmrb-import-units.png',
+            title: 'Bulk Import System',
+            description: 'Excel-based unit import functionality for handling large-scale unit additions. Includes property selection, file upload, and batch processing capabilities for efficient data migration.'
+        },
+        {
+            src: 'assets/dmrb-unit-lifecycle.png',
+            title: 'Unit Lifecycle Table',
+            description: 'Comprehensive unit tracking table showing complete unit information including lifecycle status, dates, task assignments, and progress indicators. Central data view for operational oversight.'
+        },
+        {
+            src: 'assets/dmrb-task-templates.png',
+            title: 'Task Template Management',
+            description: 'Template management system with Core, Regular, and Optional task categorization. Enables creation, modification, and deployment of standardized task workflows across all units.'
+        },
+        {
+            src: 'assets/dmrb-delays-overview.png',
+            title: 'Delays & Analytics Dashboard',
+            description: 'Advanced analytics showing delay patterns, vendor performance, and bottleneck identification. Color-coded severity indicators (Medium, High) help prioritize intervention actions.'
+        },
+        {
+            src: 'assets/dmrb-notes-blockers.png',
+            title: 'Notes & Blockers System',
+            description: 'Communication and issue tracking system linking notes to specific units. Enables team coordination, issue documentation, and resolution tracking with timestamp and author attribution.'
+        },
+        {
+            src: 'assets/dmrb-property-database.png',
+            title: 'Property Database',
+            description: 'Property and unit inventory management showing unit specifications, square footage, and unit types. Foundation data that drives task template application and resource allocation.'
+        },
+        {
+            src: 'assets/dmrb-ai-assistant.png',
+            title: 'AI Assistant Dashboard',
+            description: 'Smart dashboard with predictive analytics including Early Warning Timeline, Predicted Blockers, High-Risk Task identification, and AI Alerts system for proactive management.'
         }
-        // Additional DMRB screenshots can be added here
     ],
     'Python Training Board': [
         {
