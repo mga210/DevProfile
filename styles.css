@@ -1955,13 +1955,15 @@ section {
 }
 
 .gallery-content:not(:hover) .screenshot-image-section img[src*="python-core-widgets"] {
-    max-height: 800px;
+    max-height: 850px;
+    min-height: 600px;
     width: 100%;
     object-position: center center;
     margin: auto;
     align-self: center;
     flex-shrink: 0;
     object-fit: contain;
+    display: block;
 }
 
 .gallery-content:not(:hover) .screenshot-image-section img[src*="CleanShot"] {
@@ -2114,13 +2116,15 @@ section {
 
 .screenshot-image-section img[src*="python-core-widgets"] {
     object-fit: contain;
-    max-height: 600px;
+    max-height: 650px;
+    min-height: 500px;
     width: 100%;
     max-width: 100%;
     object-position: center center;
     margin: auto;
     align-self: center;
     flex-shrink: 0;
+    display: block;
 }
 
 .screenshot-caption {
@@ -2302,13 +2306,15 @@ section {
     }
     
     .gallery-content:not(:hover) .screenshot-image-section img[src*="python-core-widgets"] {
-        max-height: 450px;
+        max-height: 480px;
+        min-height: 350px;
         width: 100%;
         object-position: center center;
         margin: auto;
         align-self: center;
         flex-shrink: 0;
         object-fit: contain;
+        display: block;
     }
     
     .gallery-content:not(:hover) .screenshot-image-section img[src*="CleanShot"] {
