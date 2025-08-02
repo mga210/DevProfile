@@ -1978,6 +1978,7 @@ section {
     align-items: center;
     justify-content: center;
     min-height: 0;
+    overflow: hidden;
 }
 
 .screenshot-info-section {
@@ -1991,8 +1992,9 @@ section {
 }
 
 .screenshot-image-section img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     object-fit: contain;
@@ -2090,7 +2092,14 @@ section {
     
     .screenshot-image-section {
         flex: none;
-        height: 250px;
+        height: auto;
+        max-height: 300px;
+    }
+    
+    .screenshot-image-section img {
+        max-height: 300px;
+        width: auto;
+        max-width: 100%;
     }
     
     .screenshot-info-section {
