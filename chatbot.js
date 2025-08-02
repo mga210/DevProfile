@@ -280,14 +280,39 @@ class MiguelChatbot {
     getStaticResponse(message) {
         const lowerMessage = message.toLowerCase();
         
-        // Skills and expertise responses
-        if (lowerMessage.includes('skill') || lowerMessage.includes('experience') || lowerMessage.includes('what can')) {
-            return "Miguel specializes in AI Systems Development, Python programming (GUI development with PySide/Tkinter), prompt engineering, data analysis, and operations optimization. He's currently pursuing a BBA in Computer Information Systems and has certifications in Google Project Management and Python programming.";
+        // Background and journey
+        if (lowerMessage.includes('background') || lowerMessage.includes('story') || lowerMessage.includes('journey') || lowerMessage.includes('career')) {
+            return "Miguel never held a formal software title, but independently built real-world tools used in production environments across multiple properties. He transitioned from operations and service management into AI and software design by solving problems firsthand. His career began at Universal Studios, grew through technical service roles, and matured into self-driven software development — always focused on improving operational outcomes through logic and clarity.";
         }
         
-        // Projects responses
-        if (lowerMessage.includes('project') || lowerMessage.includes('system pilot') || lowerMessage.includes('blueprint') || lowerMessage.includes('dmrb')) {
-            return "Miguel has built several key projects:\n\n🤖 **System Pilot** - GPT-powered software architecture strategist\n🔧 **Blueprint Buddy** - Prompt engineering optimization tool\n📊 **DMRB** - Digital MakeReady Board for operations management\n🐍 **Python Training Board** - Interactive GUI learning platform\n\nEach project showcases his expertise in AI integration and Python development.";
+        // DMRB and production systems
+        if (lowerMessage.includes('dmrb') || lowerMessage.includes('make ready') || lowerMessage.includes('digital board') || lowerMessage.includes('production')) {
+            return "The DMRB (Make Ready Digital Board) is Miguel's flagship achievement — a full-scale Python coordination engine for managing unit turnovers. This production system reduced delays, eliminated spreadsheet chaos, and introduced lifecycle logic with real enforcement. It's deployed across multiple properties and demonstrates his ability to architect solutions that work in real operational environments.";
+        }
+        
+        // Technical skills and architecture
+        if (lowerMessage.includes('skill') || lowerMessage.includes('technical') || lowerMessage.includes('architecture') || lowerMessage.includes('system thinking')) {
+            return "Miguel is highly skilled in system thinking, process automation, prompt engineering, and AI-driven coordination tools. He approaches problems like a software architect: separating UI from logic, using clean architecture, and applying DTO structures to keep logic traceable and auditable. His technical stack includes GPT-4, LangChain, Python (Pandas, PySide6, FastAPI), SQLite, and Supabase.";
+        }
+        
+        // Python and development approach
+        if (lowerMessage.includes('python') || lowerMessage.includes('programming') || lowerMessage.includes('development') || lowerMessage.includes('code')) {
+            return "Miguel uses Python to build intelligent tools, dashboards, and UI-based systems — even without writing raw frontend code. He specializes in GUI development with PySide6 and Tkinter, creating full-scale coordination engines with clean separation between UI and business logic. His approach focuses on making complex systems traceable and auditable.";
+        }
+        
+        // Replit and deployment
+        if (lowerMessage.includes('replit') || lowerMessage.includes('deploy') || lowerMessage.includes('web') || lowerMessage.includes('no-code')) {
+            return "Miguel uses Replit to build and deploy web-based tools, even though he doesn't code HTML/JS from scratch. He assembles, structures, and deploys full projects using no-code/low-code workflows, smart design choices, and AI-assisted coding. This approach lets him focus on solving business problems rather than getting bogged down in frontend implementation details.";
+        }
+        
+        // Projects and tools
+        if (lowerMessage.includes('project') || lowerMessage.includes('tools') || lowerMessage.includes('system pilot') || lowerMessage.includes('blueprint')) {
+            return "Miguel builds grounded, real-world solutions:\n\n• **DMRB** - Full-scale Python coordination engine for unit turnovers, deployed across multiple properties\n• **System Pilot** - GPT-powered architecture strategist\n• **Blueprint Buddy** - Prompt engineering optimization tool\n• **Python Training Board** - GUI learning platform\n\nEverything Miguel builds is tested, deployed, and used live by real teams — not hypothetical projects.";
+        }
+        
+        // AI and automation focus
+        if (lowerMessage.includes('ai') || lowerMessage.includes('automation') || lowerMessage.includes('gpt') || lowerMessage.includes('prompt')) {
+            return "Miguel specializes in AI-driven coordination tools and prompt engineering. His tools use GPT-4 and LangChain to create intelligent automation systems that solve real operational problems. He focuses on practical AI implementations that reduce delays, eliminate manual processes, and introduce logical enforcement to business workflows.";
         }
         
         // Contact information
@@ -295,28 +320,13 @@ class MiguelChatbot {
             return "You can reach Miguel at:\n📧 mgonzalez869@gmail.com\n📍 Based in Plano, TX\n💼 LinkedIn: linkedin.com/in/miguel-gonzalez-8a389791\n🔗 GitHub: github.com/mga210";
         }
         
-        // Background and education
-        if (lowerMessage.includes('background') || lowerMessage.includes('education') || lowerMessage.includes('story')) {
-            return "Miguel is transitioning from operations management to AI Systems Development. He has extensive experience in service operations leadership, team training (50+ members), and process automation. Currently pursuing a BBA in Computer Information Systems at Ana G. Méndez University.";
-        }
-        
-        // Programming languages
-        if (lowerMessage.includes('python') || lowerMessage.includes('programming') || lowerMessage.includes('code')) {
-            return "Miguel specializes in Python development, particularly:\n🖥️ GUI applications using PySide6 and Tkinter\n🤖 AI workflow engineering and prompt optimization\n📊 Data analysis and automation scripts\n🔗 API integrations and web development\n🏗️ Clean Architecture and modular design patterns";
-        }
-        
-        // AI and automation
-        if (lowerMessage.includes('ai') || lowerMessage.includes('artificial intelligence') || lowerMessage.includes('automation')) {
-            return "Miguel focuses on practical AI implementations:\n🧠 GPT-powered automation systems\n⚙️ Workflow optimization and process intelligence\n🔄 Legacy system modernization\n📈 Operational efficiency improvements\n💡 Custom AI agent development for business needs";
-        }
-        
         // Generic greeting
-        if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
-            return "Hello! I'm here to help you learn about Miguel's expertise in AI Systems Development, Python programming, and his various projects. What would you like to know?";
+        if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey') || lowerMessage.includes('greeting')) {
+            return "Hello! I'm Miguel's professional assistant. I can tell you about his real-world AI tools, Python coordination systems, and his unique journey from operations to self-driven software development. What would you like to know?";
         }
         
-        // Default response
-        return "I can help you learn about Miguel's skills in AI Systems Development, Python programming, his projects like System Pilot and DMRB, his professional background, and how to contact him. What specific area interests you?";
+        // Default response reflecting authentic positioning
+        return "I'm here to share Miguel's authentic technical story — how he built production tools like the DMRB coordination engine, his approach to system architecture, and his transition from operations to AI systems development. What specific aspect of his work interests you?";
     }
 }
 
