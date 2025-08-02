@@ -109,8 +109,6 @@ function initContactForm() {
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             // Get form data
             const formData = new FormData(contactForm);
             const data = {
@@ -120,11 +118,18 @@ function initContactForm() {
                 message: formData.get('message')
             };
 
-            // Validate form
-            if (validateForm(data)) {
-                // Simulate form submission
-                submitForm(data);
+            // Validate form - only prevent default if validation fails
+            if (!validateForm(data)) {
+                e.preventDefault();
+                return false;
             }
+
+            // If validation passes, let the form submit naturally to Formspree
+            // Show loading state
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitButton.disabled = true;
         });
     }
 }
