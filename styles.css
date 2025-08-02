@@ -1927,6 +1927,24 @@ section {
     display: flex;
     flex-direction: column;
     height: calc(95vh - 80px);
+    transition: all 0.4s ease;
+}
+
+.gallery-content:not(:hover) .screenshot-navigation {
+    flex: 1;
+}
+
+.gallery-content:not(:hover) .screenshot-image-section {
+    flex: 1.5;
+}
+
+.gallery-content:not(:hover) .screenshot-image-section img {
+    max-height: 700px;
+}
+
+.gallery-content:not(:hover) .screenshot-info-section {
+    flex: 1;
+    padding: 30px;
 }
 
 .screenshot-navigation {
@@ -2037,6 +2055,16 @@ section {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     min-height: 120px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.gallery-content:hover .screenshot-thumbnails {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
 }
 
 .thumbnail {
@@ -2144,6 +2172,22 @@ section {
         padding: 20px 15px;
         gap: 15px;
         min-height: 100px;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+    }
+    
+    .gallery-content:not(:hover) .screenshot-image-section {
+        max-height: 400px;
+    }
+    
+    .gallery-content:not(:hover) .screenshot-image-section img {
+        max-height: 400px;
+    }
+    
+    .gallery-content:not(:hover) .screenshot-info-section {
+        max-height: 250px;
+        padding: 20px;
     }
     
     .screenshot-thumbnails::-webkit-scrollbar {
