@@ -202,7 +202,7 @@ class MiguelChatbot {
                     },
                     body: JSON.stringify({
                         message: message,
-                        conversationHistory: this.conversationHistory.slice(-10) // Keep last 10 messages for context
+                        conversationHistory: this.conversationHistory.slice(-16) // Keep last 16 messages for better context
                     })
                 });
 
@@ -320,13 +320,28 @@ class MiguelChatbot {
             return "You can reach Miguel at:\n📧 mgonzalez869@gmail.com\n📍 Based in Plano, TX\n💼 LinkedIn: linkedin.com/in/miguel-gonzalez-8a389791\n🔗 GitHub: github.com/mga210";
         }
         
-        // Generic greeting
-        if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey') || lowerMessage.includes('greeting')) {
-            return "Hello! I'm Miguel's professional assistant. I can tell you about his real-world AI tools, Python coordination systems, and his unique journey from operations to self-driven software development. What would you like to know?";
+        // Education and learning
+        if (lowerMessage.includes('education') || lowerMessage.includes('university') || lowerMessage.includes('degree') || lowerMessage.includes('certification')) {
+            return "Miguel is currently pursuing a BBA in Computer Information Systems at Ana G. Méndez University. He also holds certifications in Google Project Management, Python for Everybody (University of Michigan), and EPA Section 608. His learning approach combines formal education with hands-on project development and AI-assisted skill building.";
         }
         
-        // Default response reflecting authentic positioning
-        return "I'm here to share Miguel's authentic technical story — how he built production tools like the DMRB coordination engine, his approach to system architecture, and his transition from operations to AI systems development. What specific aspect of his work interests you?";
+        // Specific technical questions
+        if (lowerMessage.includes('langchain') || lowerMessage.includes('fastapi') || lowerMessage.includes('supabase') || lowerMessage.includes('sqlite')) {
+            return "Miguel's technical stack includes:\n• **LangChain** - For building AI agent workflows and prompt chains\n• **FastAPI** - For creating high-performance API backends\n• **SQLite & Supabase** - For local and cloud database solutions\n• **PySide6/Tkinter** - For Python GUI development\n• **Pandas** - For data manipulation and analysis\n\nHe integrates these tools to build coordination engines and intelligent automation systems.";
+        }
+        
+        // Work philosophy and approach
+        if (lowerMessage.includes('philosophy') || lowerMessage.includes('approach') || lowerMessage.includes('methodology') || lowerMessage.includes('thinking')) {
+            return "Miguel's development philosophy centers on solving real operational problems through clean architecture. He believes in separating UI from business logic, using DTO patterns for data transfer, and building systems that are traceable and auditable. His approach: identify the core problem, architect a modular solution, implement with clean code, and deploy for real-world testing.";
+        }
+        
+        // Generic greeting
+        if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey') || lowerMessage.includes('greeting')) {
+            return "Hello! I'm Miguel's intelligent assistant with deep knowledge of his technical journey, projects, and expertise. I can discuss his real-world AI tools, Python coordination systems, architectural approaches, and his evolution from operations to self-driven software development. What would you like to explore?";
+        }
+        
+        // Default response reflecting enhanced intelligence  
+        return "I have comprehensive knowledge of Miguel's technical work, from his DMRB coordination engine to his AI development approach. I can discuss his projects in detail, explain his architectural thinking, or explore how his operations background influences his software design. What specific aspect interests you most?";
     }
 }
 
