@@ -406,6 +406,25 @@ section {
     color: #667eea;
 }
 
+.about-card h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #4a5568;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.about-card ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.about-card li {
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
 .about-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
