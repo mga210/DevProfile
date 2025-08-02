@@ -325,12 +325,7 @@ document.querySelectorAll('.project-card, .project-item').forEach(card => {
         this.style.transform = 'translateY(0) scale(1)';
     });
     
-    // Add click handler to open project modal
-    card.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        openProjectModal(this);
-    });
+    // Remove click handler since we now have dedicated buttons
 });
 
 // Prevent project links from navigating away
