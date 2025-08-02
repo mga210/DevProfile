@@ -2,6 +2,7 @@
 class MiguelChatbot {
     constructor() {
         this.apiUrl = '/api/chat'; // Use our server endpoint for security
+        this.isGitHubPages = window.location.hostname.includes('github.io') || window.location.hostname.includes('githubusercontent.com');
         this.isOpen = false;
         this.isLoading = false;
         this.conversationHistory = [];
@@ -101,7 +102,12 @@ class MiguelChatbot {
     }
 
     addWelcomeMessage() {
-        const welcomeMessage = "👋 Hi! I'm Miguel's AI assistant. I can help you learn about:\n\n🤖 AI Systems Development\n🐍 Python Programming & GUIs\n📊 Data Analysis & Automation\n🚀 His projects like System Pilot, Blueprint Buddy, and DMRB\n\nWhat would you like to know?";
+        let welcomeMessage;
+        if (this.isGitHubPages) {
+            welcomeMessage = "👋 Hi! I'm Miguel's assistant. I can help you learn about:\n\n🤖 AI Systems Development\n🐍 Python Programming & GUIs\n📊 Data Analysis & Automation\n🚀 His projects like System Pilot, Blueprint Buddy, and DMRB\n\nWhat would you like to know?";
+        } else {
+            welcomeMessage = "👋 Hi! I'm Miguel's AI assistant. I can help you learn about:\n\n🤖 AI Systems Development\n🐍 Python Programming & GUIs\n📊 Data Analysis & Automation\n🚀 His projects like System Pilot, Blueprint Buddy, and DMRB\n\nWhat would you like to know?";
+        }
         this.addMessage(welcomeMessage, 'bot');
     }
 
@@ -173,24 +179,31 @@ class MiguelChatbot {
                 content: message
             });
 
-            // Send to our secure server endpoint
-            const response = await fetch(this.apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    message: message,
-                    conversationHistory: this.conversationHistory.slice(-10) // Keep last 10 messages for context
-                })
-            });
+            let botResponse;
 
-            if (!response.ok) {
-                throw new Error(`API Error: ${response.status} ${response.statusText}`);
+            if (this.isGitHubPages) {
+                // GitHub Pages fallback - provide intelligent responses without API
+                botResponse = this.getStaticResponse(message);
+            } else {
+                // Send to our secure server endpoint
+                const response = await fetch(this.apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        conversationHistory: this.conversationHistory.slice(-10) // Keep last 10 messages for context
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.status} ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                botResponse = data.response;
             }
-
-            const data = await response.json();
-            const botResponse = data.response;
 
             // Add bot response to conversation history
             this.conversationHistory.push({
@@ -248,6 +261,48 @@ class MiguelChatbot {
                 }
             }, 3000);
         }, 100);
+    }
+
+    getStaticResponse(message) {
+        const lowerMessage = message.toLowerCase();
+        
+        // Skills and expertise responses
+        if (lowerMessage.includes('skill') || lowerMessage.includes('experience') || lowerMessage.includes('what can')) {
+            return "Miguel specializes in AI Systems Development, Python programming (GUI development with PySide/Tkinter), prompt engineering, data analysis, and operations optimization. He's currently pursuing a BBA in Computer Information Systems and has certifications in Google Project Management and Python programming.";
+        }
+        
+        // Projects responses
+        if (lowerMessage.includes('project') || lowerMessage.includes('system pilot') || lowerMessage.includes('blueprint') || lowerMessage.includes('dmrb')) {
+            return "Miguel has built several key projects:\n\n🤖 **System Pilot** - GPT-powered software architecture strategist\n🔧 **Blueprint Buddy** - Prompt engineering optimization tool\n📊 **DMRB** - Digital MakeReady Board for operations management\n🐍 **Python Training Board** - Interactive GUI learning platform\n\nEach project showcases his expertise in AI integration and Python development.";
+        }
+        
+        // Contact information
+        if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('reach')) {
+            return "You can reach Miguel at:\n📧 mgonzalez869@gmail.com\n📍 Based in Plano, TX\n💼 LinkedIn: linkedin.com/in/miguel-gonzalez-8a389791\n🔗 GitHub: github.com/mga210";
+        }
+        
+        // Background and education
+        if (lowerMessage.includes('background') || lowerMessage.includes('education') || lowerMessage.includes('story')) {
+            return "Miguel is transitioning from operations management to AI Systems Development. He has extensive experience in service operations leadership, team training (50+ members), and process automation. Currently pursuing a BBA in Computer Information Systems at Ana G. Méndez University.";
+        }
+        
+        // Programming languages
+        if (lowerMessage.includes('python') || lowerMessage.includes('programming') || lowerMessage.includes('code')) {
+            return "Miguel specializes in Python development, particularly:\n🖥️ GUI applications using PySide6 and Tkinter\n🤖 AI workflow engineering and prompt optimization\n📊 Data analysis and automation scripts\n🔗 API integrations and web development\n🏗️ Clean Architecture and modular design patterns";
+        }
+        
+        // AI and automation
+        if (lowerMessage.includes('ai') || lowerMessage.includes('artificial intelligence') || lowerMessage.includes('automation')) {
+            return "Miguel focuses on practical AI implementations:\n🧠 GPT-powered automation systems\n⚙️ Workflow optimization and process intelligence\n🔄 Legacy system modernization\n📈 Operational efficiency improvements\n💡 Custom AI agent development for business needs";
+        }
+        
+        // Generic greeting
+        if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+            return "Hello! I'm here to help you learn about Miguel's expertise in AI Systems Development, Python programming, and his various projects. What would you like to know?";
+        }
+        
+        // Default response
+        return "I can help you learn about Miguel's skills in AI Systems Development, Python programming, his projects like System Pilot and DMRB, his professional background, and how to contact him. What specific area interests you?";
     }
 }
 
