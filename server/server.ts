@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import OpenAI from 'openai';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,6 +12,11 @@ import type { InsertContact, InsertPortfolioView, InsertProjectInteraction, Inse
 
 const app = express();
 const PORT = Number(process.env.PORT) || 5000;
+
+// Initialize OpenAI
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+});
 
 // Middleware
 app.use(cors());
@@ -184,6 +190,62 @@ app.get('/api/skills/ratings', async (req, res) => {
   } catch (error) {
     console.error('Error fetching all skill ratings:', error);
     res.status(500).json({ success: false, error: 'Failed to fetch ratings' });
+  }
+});
+
+// Chatbot API endpoint
+app.post('/api/chat', async (req, res) => {
+  try {
+    const { message, conversationHistory = [] } = req.body;
+    
+    if (!message) {
+      return res.status(400).json({ 
+        success: false, 
+        error: 'Message is required' 
+      });
+    }
+
+    // Prepare the system message and conversation
+    const messages = [
+      {
+        role: 'system',
+        content: `You are Miguel A. Gonzalez Almonte's professional AI assistant. Miguel is an AI Systems Developer and Python specialist based in Plano, TX. 
+
+Key information about Miguel:
+- AI Systems Developer with expertise in GPT-powered automation, Python development, and operational intelligence
+- Current education: BBA in Computer Information Systems at Ana G. Méndez University
+- Professional background in operations management transitioning to AI/software development
+- Key projects: System Pilot (GPT architecture strategist), Blueprint Buddy (prompt engineering tool), DMRB (digital makeready board), Python Training Board (GUI learning platform)
+- Skills: Python (GUI development with PySide/Tkinter), AI workflow engineering, prompt engineering, data analysis, operations optimization, no-code/low-code web deployment
+- Certifications: Google Project Management, Python for Everybody, EPA Section 608
+- Contact: mgonzalez869@gmail.com
+- Experience: Service operations leadership, team training (50+ members), process automation, cost reduction initiatives
+
+Answer questions about Miguel's skills, experience, projects, and professional background. Be helpful, professional, and conversational. If asked about something not in Miguel's background, politely redirect to his actual expertise areas.`
+      },
+      ...conversationHistory
+    ];
+
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: messages,
+      max_tokens: 300,
+      temperature: 0.7
+    });
+
+    const response = completion.choices[0].message.content;
+    
+    res.json({ 
+      success: true, 
+      response: response
+    });
+
+  } catch (error) {
+    console.error('Error in chat API:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Failed to process chat message'
+    });
   }
 });
 

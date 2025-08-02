@@ -3,6 +3,12 @@
 This is a professional AI Systems Developer portfolio website built with vanilla HTML, CSS, and JavaScript. The project showcases an AI developer's transformation from operations management to building intelligent automation systems. It features a strategic, role-aligned personal brand focused on AI workflow engineering, Python systems building, and operational intelligence.
 
 ## Recent Changes (August 2, 2025)
+- ✅ **AI CHATBOT INTEGRATION COMPLETE**: Added OpenAI GPT-3.5 powered chatbot widget with secure backend implementation
+  - Floating chat bubble in bottom right corner with toggle functionality
+  - Secure server-side API handling to protect OpenAI API key
+  - Comprehensive knowledge base about Miguel's skills, projects, and experience
+  - Mobile-responsive design with typing indicators and conversation history
+  - Professional AI assistant persona for portfolio inquiries
 - ✅ **MOBILE SECTION NAVIGATION IMPLEMENTED**: Added mobile-specific navigation where users tap menu items to jump directly to sections instead of scrolling through everything, with desktop experience unchanged
 - ✅ **CONTACT PHONE HIDDEN**: Temporarily disabled phone number display in contact section while keeping code intact for future use
 - ✅ **TESTIMONIAL GENERIC UPDATE**: Changed "Mid-Atlantic Apartment Communities" to "Property Management Company" and "RPM Living" to "Technology Integration Team" for more generic professional appeal
@@ -91,6 +97,7 @@ Preferred communication style: Simple, everyday language.
 - **Express.js Server**: RESTful API server with CORS support
 - **TypeScript**: Type-safe development with modern JavaScript features
 - **Drizzle ORM**: Schema-first ORM for PostgreSQL database operations
+- **OpenAI Integration**: GPT-3.5 powered chatbot with secure API key handling
 - **Authentication**: IP-based tracking for analytics (no user authentication required)
 
 ## File Structure

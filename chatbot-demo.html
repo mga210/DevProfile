@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miguel's Portfolio - AI Chatbot Demo</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chatbot Styles -->
+    <link rel="stylesheet" href="chatbot.css">
+    
+    <style>
+        /* Demo page styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .demo-container {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .demo-container h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .demo-container p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .demo-features {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .demo-features h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .demo-features ul {
+            list-style: none;
+        }
+
+        .demo-features li {
+            padding: 8px 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+
+        .demo-features li i {
+            color: #667eea;
+            margin-right: 10px;
+            width: 16px;
+        }
+
+        .chat-instruction {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .chat-instruction h4 {
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-instruction h4 i {
+            color: #667eea;
+            margin-right: 8px;
+        }
+
+        .security-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #856404;
+        }
+
+        .security-note strong {
+            color: #f39c12;
+        }
+
+        @media (max-width: 768px) {
+            .demo-container {
+                padding: 30px 20px;
+            }
+            
+            .demo-container h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🤖 AI Chatbot Demo</h1>
+        <p>Interactive AI assistant for Miguel's portfolio website</p>
+        
+        <div class="demo-features">
+            <h3>Features:</h3>
+            <ul>
+                <li><i class="fas fa-robot"></i> GPT-3.5 powered responses</li>
+                <li><i class="fas fa-comments"></i> Natural conversation flow</li>
+                <li><i class="fas fa-mobile-alt"></i> Mobile-responsive design</li>
+                <li><i class="fas fa-brain"></i> Context-aware about Miguel's background</li>
+                <li><i class="fas fa-code"></i> Pure vanilla JavaScript implementation</li>
+            </ul>
+        </div>
+        
+        <div class="chat-instruction">
+            <h4><i class="fas fa-comment-dots"></i> Try the Chatbot!</h4>
+            <p>Click the chat bubble in the bottom right corner to start a conversation. Ask about Miguel's skills, projects, or experience!</p>
+        </div>
+        
+        <div class="security-note">
+            <strong>🛡️ Security Note:</strong> This demo uses client-side API calls for demonstration purposes. In production, always proxy OpenAI requests through a secure backend to protect your API keys.
+        </div>
+    </div>
+
+    <!-- Chatbot JavaScript -->
+    <script>
+        // Replace OPENAI_API_KEY with actual environment variable
+        const OPENAI_API_KEY = process?.env?.OPENAI_API_KEY || 'OPENAI_API_KEY';
+    </script>
+    <script src="chatbot.js"></script>
+</body>
+</html>
