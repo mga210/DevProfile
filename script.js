@@ -429,6 +429,8 @@ function handleContactForm() {
         submitBtn.disabled = true;
         
         try {
+            console.log('Submitting to Formspree...', data);
+            
             // Submit to Formspree
             const response = await fetch('https://formspree.io/f/xnnzbnob', {
                 method: 'POST',
@@ -438,11 +440,16 @@ function handleContactForm() {
                 }
             });
             
+            console.log('Formspree response status:', response.status);
+            
             if (response.ok) {
+                const responseData = await response.json();
+                console.log('Formspree success response:', responseData);
                 showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
                 form.reset();
             } else {
                 const responseData = await response.json();
+                console.log('Formspree error response:', responseData);
                 if (responseData.errors) {
                     const errorMessages = responseData.errors.map(error => error.message).join(', ');
                     showNotification(`Error: ${errorMessages}`, 'error');
