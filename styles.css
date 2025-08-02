@@ -843,6 +843,14 @@ section {
     overflow: hidden;
 }
 
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: white;
+}
+
 .project-placeholder {
     color: white;
     font-size: 3rem;
