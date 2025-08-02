@@ -493,6 +493,52 @@ const screenshotData = {
             src: 'assets/dmrb-ai-assistant.png',
             title: 'AI Assistant Dashboard',
             description: 'Smart dashboard with predictive analytics including Early Warning Timeline, Predicted Blockers, High-Risk Task identification, and AI Alerts system for proactive management.'
+        },
+        {
+            src: 'assets/dmrb-dashboard.png',
+            title: '❤️ CORE DIALOGS (System Architecture)',
+            description: `❤️ CORE DIALOGS (Lifeblood of the system)
+Each dialog triggers system mutations and lifecycle orchestration:
+
+➕ Add Unit Dialog (The Heartbeat)
+• Creates lifecycle state from user input
+• Injects task templates into unit_lifecycle and unit_tasks
+• Emits unit_created(payload) — system-wide sync trigger
+• Source: dialog_add_unit.py → add_unit_dialog
+
+📥 Import Units (The Mass Valve)
+• Batch unit creation from .xlsx
+• Deduplicates, applies templates, injects state
+• Source: dialog_import.py → unit_import_dialog
+
+➕ Add Task (The Rhythm Engine)
+• Defines task templates, offsets, Final Walk constraints
+• Drives all unit task sequencing
+• Source: dialog_add_task.py → add_task_dialog
+
+⚙ Manage Dropdown (The Blood Chemistry)
+• Manages roles, statuses, and logic-bound labels
+• Lives in lookup.db and controls validation across views
+• Source: dialog_lookup.py → Manage_dropdown_dialog
+
+🧠 CORE VIEWS (Memory + Execution Control)
+These views are not just visual — they define system behavior and readiness logic:
+
+📁 Units View (Central Consciousness)
+• Stores unit lifecycle, readiness %, and task sync
+• Feeds: dashboards, delay views, task boards
+• Reacts to task completion events
+• Source: view_unit.py → unit_view
+
+⚒ Task Template View (Procedural Memory)
+• Encodes readiness logic through task categories + offsets
+• Central to Final Walk logic and delay prediction
+• Source: view_task_template.py → task_template_view
+
+🏘 Property/Unit DB View (Long-Term Memory)
+• Reference for unit structure: square footage, type
+• Ensures valid template-task injection
+• Source: view_property_unit_db.py → property_unit_db_view`
         }
     ],
     'Python Training Board': [
