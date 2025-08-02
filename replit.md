@@ -5,7 +5,7 @@ This is a professional AI Systems Developer portfolio website built with vanilla
 ## Recent Changes (August 2, 2025)
 - ✅ **MOBILE SECTION NAVIGATION IMPLEMENTED**: Added mobile-specific navigation where users tap menu items to jump directly to sections instead of scrolling through everything, with desktop experience unchanged
 - ✅ **CONTACT PHONE HIDDEN**: Temporarily disabled phone number display in contact section while keeping code intact for future use
-- ✅ **TESTIMONIAL GENERIC UPDATE**: Changed "Mid-Atlantic Apartment Communities" to "Property Management Company" for more generic professional appeal
+- ✅ **TESTIMONIAL GENERIC UPDATE**: Changed "Mid-Atlantic Apartment Communities" to "Property Management Company" and "RPM Living" to "Technology Integration Team" for more generic professional appeal
 - ✅ **TRAINING ACHIEVEMENT UPDATED**: Enhanced "50+ Team Members Trained" description to reflect comprehensive training across all operational aspects including digital systems, workflow processes, safety protocols, and team coordination
 - ✅ **ABOUT ME SECTION REORGANIZED**: Moved "Core Specialties" to first position, followed by "Current Focus Areas", then "Education & Certifications" for optimal information hierarchy
 - ✅ **NO-CODE/LOW-CODE WEB SKILLS UPDATE**: Updated both portfolio and resume to focus on "No-Code / Low-Code Web Deployment" with Replit expertise, tool integration, and UX-focused page building
