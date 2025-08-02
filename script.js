@@ -103,12 +103,14 @@ function initScrollAnimations() {
     });
 }
 
-// Contact form - Handle success message and form reset
+// Contact form - Handle GitHub Pages and Replit compatibility
 function initContactForm() {
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default to handle manually
+            
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalText = submitButton.innerHTML;
             
@@ -116,14 +118,32 @@ function initContactForm() {
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitButton.disabled = true;
             
-            // Allow form to submit to Formspree
-            // After submission, show success message and reset form
-            setTimeout(() => {
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            // Submit to Formspree via fetch for better compatibility
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
+                    showNotification('Thank you! Your message has been sent successfully.', 'success');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
                 submitButton.innerHTML = originalText;
                 submitButton.disabled = false;
-                showNotification('Thank you! Your message has been sent successfully.', 'success');
-                contactForm.reset();
-            }, 3000);
+                showNotification('Sorry, there was an error sending your message. Please try again or email directly.', 'error');
+            });
         });
     }
 }
