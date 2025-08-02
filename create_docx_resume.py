@@ -146,11 +146,12 @@ Now seeking roles where I can continue designing agent-powered workflows, intern
             "CMMS Data Structuring, Delay Tracking Logic, Heatmaps and Export Systems",
             "Real-time Analytics, Service Manager Consoles, Performance Metrics"
         ]),
-        ("Web Development", [
-            "HTML5, CSS3, JavaScript (Responsive Design, Interactive UIs)",
-            "Node.js, Express.js, TypeScript (Backend Development, API Integration)",
-            "PostgreSQL, Drizzle ORM (Database Management, Full-Stack Development)",
-            "Replit Development, Static Hosting, GitHub Pages Deployment"
+        ("No-Code / Low-Code Web Deployment", [
+            "Replit: Web Page Design & Deployment (HTML Structuring, Visual Flow, Script Integration)",
+            "Layout & Usability Architecture (Fonts, Spacing, Mobile-Friendliness, User Interaction)",
+            "Integration of Tools: Formspree, Netlify, Cloudflare for Functional Delivery",
+            "Full-stack launch using prebuilt components and code remixing",
+            "UX-Focused Page Building: Professional design without hand-coding"
         ]),
         ("Workflow Automation", [
             "Legacy System Modernization, Excel-to-System Migration",

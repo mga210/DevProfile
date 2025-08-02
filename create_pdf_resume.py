@@ -155,12 +155,13 @@ def create_html_resume():
         </div>
 
         <div class="skills-category">
-            <div class="skills-title">Web Development</div>
+            <div class="skills-title">No-Code / Low-Code Web Deployment</div>
             <ul>
-                <li>HTML5, CSS3, JavaScript (Responsive Design, Interactive UIs)</li>
-                <li>Node.js, Express.js, TypeScript (Backend Development, API Integration)</li>
-                <li>PostgreSQL, Drizzle ORM (Database Management, Full-Stack Development)</li>
-                <li>Replit Development, Static Hosting, GitHub Pages Deployment</li>
+                <li>Replit: Web Page Design & Deployment (HTML Structuring, Visual Flow, Script Integration)</li>
+                <li>Layout & Usability Architecture (Fonts, Spacing, Mobile-Friendliness, User Interaction)</li>
+                <li>Integration of Tools: Formspree, Netlify, Cloudflare for Functional Delivery</li>
+                <li>Full-stack launch using prebuilt components and code remixing</li>
+                <li>UX-Focused Page Building: Professional design without hand-coding</li>
             </ul>
         </div>
 
