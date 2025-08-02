@@ -102,7 +102,7 @@ def create_html_resume():
     <div class="header">
         <div class="name">Miguel A. Gonzalez Almonte</div>
         <div class="contact">
-            Plano, TX · 787-367-9843 · sllm75@hotmail.com<br>
+            Plano, TX · 787-367-9843 · mgonzalez869@gmail.com<br>
             <a href="https://www.linkedin.com/in/miguel-gonzalez-8a389791" style="color: #0563C1; text-decoration: none;">LinkedIn</a> · 
             <a href="https://mga210.github.io/DevProfile/" style="color: #0563C1; text-decoration: none;">Portfolio</a> · 
             <a href="https://github.com/mga210" style="color: #0563C1; text-decoration: none;">GitHub</a>

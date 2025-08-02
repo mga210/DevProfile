@@ -7,7 +7,7 @@ def create_text_resume():
     """Create a text version of the resume for PDF conversion"""
     resume_content = """Miguel A. Gonzalez Almonte
 
-Plano, TX · 787-367-9843 · sllm75@hotmail.com
+Plano, TX · 787-367-9843 · mgonzalez869@gmail.com
 LinkedIn · Portfolio · GitHub
 
 AI Systems Builder | GPT-Powered Workflow Architect | Operational Intelligence Technologist
