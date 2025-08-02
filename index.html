@@ -1013,7 +1013,7 @@
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" required>
-                            <input type="hidden" name="_replyto" id="email">
+
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
@@ -1024,8 +1024,9 @@
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
                         <!-- Formspree configuration -->
-                        <input type="hidden" name="_subject" value="New contact form submission">
+                        <input type="hidden" name="_subject" value="Portfolio Contact Form - New Message">
                         <input type="hidden" name="_next" value="https://mga210.github.io/DevProfile/#contact">
+                        <input type="hidden" name="_cc" value="mgonzalez869@gmail.com">
                         <button type="submit" class="btn btn-primary">
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
