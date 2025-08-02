@@ -38,7 +38,7 @@ class MiguelChatbot {
                         <div class="input-container">
                             <textarea 
                                 id="chatbot-textarea" 
-                                placeholder="Ask me anything about Miguel's experience..." 
+                                placeholder="Type your message here..." 
                                 rows="1"
                             ></textarea>
                             <button class="send-button" id="send-button">
@@ -88,8 +88,16 @@ class MiguelChatbot {
     }
 
     autoResize(textarea) {
-        textarea.style.height = 'auto';
-        textarea.style.height = Math.min(textarea.scrollHeight, 100) + 'px';
+        textarea.style.height = '48px';
+        const newHeight = Math.min(textarea.scrollHeight, 120);
+        textarea.style.height = newHeight + 'px';
+        
+        // Show/hide scrollbar based on content
+        if (textarea.scrollHeight > 120) {
+            textarea.style.overflowY = 'auto';
+        } else {
+            textarea.style.overflowY = 'hidden';
+        }
     }
 
     addWelcomeMessage() {
@@ -215,27 +223,31 @@ class MiguelChatbot {
     }
 
     autoOpenWelcome() {
-        const toggle = document.getElementById('chatbot-toggle');
-        
-        // Add pulsing animation to get attention
+        // Wait for DOM to be fully ready
         setTimeout(() => {
-            toggle.classList.add('pulse');
-        }, 1000);
-        
-        // Auto-open chatbot after 3 seconds, then close after 10 seconds
-        setTimeout(() => {
-            if (!this.isOpen) {
-                toggle.classList.remove('pulse');
-                this.toggleChatbot();
-                
-                // Auto-close after 10 seconds
-                setTimeout(() => {
-                    if (this.isOpen) {
-                        this.toggleChatbot();
-                    }
-                }, 10000);
-            }
-        }, 3000);
+            const toggle = document.getElementById('chatbot-toggle');
+            if (!toggle) return;
+            
+            // Add pulsing animation to get attention
+            setTimeout(() => {
+                toggle.classList.add('pulse');
+            }, 1000);
+            
+            // Auto-open chatbot after 3 seconds, then close after 10 seconds
+            setTimeout(() => {
+                if (!this.isOpen && toggle) {
+                    toggle.classList.remove('pulse');
+                    this.toggleChatbot();
+                    
+                    // Auto-close after 10 seconds
+                    setTimeout(() => {
+                        if (this.isOpen) {
+                            this.toggleChatbot();
+                        }
+                    }, 10000);
+                }
+            }, 3000);
+        }, 100);
     }
 }
 
@@ -259,5 +271,14 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeChatbot);
 } else {
     // Document is already loaded
-    setTimeout(initializeChatbot, 500);
+    initializeChatbot();
 }
+
+// Backup initialization - ensure it runs even if other methods fail
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        if (!document.getElementById('chatbot-container')) {
+            initializeChatbot();
+        }
+    }, 1000);
+});
