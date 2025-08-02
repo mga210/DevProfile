@@ -349,6 +349,17 @@ function openProjectModal(projectCard) {
     const techTags = Array.from(projectCard.querySelectorAll('.tech-tag')).map(tag => tag.textContent);
     const detailedInfo = projectCard.querySelector('.project-details');
     
+    // Get project image
+    const projectImage = projectCard.querySelector('.project-image img');
+    let imageContent = '';
+    if (projectImage) {
+        imageContent = `
+            <div class="project-modal-image">
+                <img src="${projectImage.src}" alt="${projectImage.alt}" loading="lazy">
+            </div>
+        `;
+    }
+    
     let detailedContent = '';
     if (detailedInfo) {
         detailedContent = detailedInfo.innerHTML;
@@ -361,6 +372,7 @@ function openProjectModal(projectCard) {
             <button class="close-modal" onclick="closeProjectModal()" aria-label="Close">×</button>
         </div>
         <div class="project-modal-body">
+            ${imageContent}
             <div class="project-modal-description">
                 <p>${description}</p>
             </div>

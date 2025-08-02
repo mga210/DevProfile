@@ -1856,6 +1856,23 @@ section {
     padding: 0 30px 30px 30px;
 }
 
+.project-modal-image {
+    margin-bottom: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.project-modal-image img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
 .project-modal-description {
     margin-bottom: 25px;
     padding: 20px;
