@@ -1954,6 +1954,14 @@ section {
     max-height: 550px;
 }
 
+.gallery-content:not(:hover) .screenshot-image-section img[src*="python-core-widgets"] {
+    max-height: 700px;
+    object-position: center center;
+    margin: auto 0;
+    align-self: center;
+    flex-shrink: 0;
+}
+
 .gallery-content:not(:hover) .screenshot-info-section {
     flex: 1.2;
     padding: 35px;
@@ -2085,6 +2093,17 @@ section {
 .screenshot-image-section img[src*="CleanShot"] {
     object-fit: contain;
     max-height: 500px;
+}
+
+.screenshot-image-section img[src*="python-core-widgets"] {
+    object-fit: scale-down;
+    max-height: 500px;
+    width: auto;
+    max-width: 100%;
+    object-position: center center;
+    margin: auto 0;
+    align-self: center;
+    flex-shrink: 0;
 }
 
 .screenshot-caption {
@@ -2263,6 +2282,14 @@ section {
     
     .gallery-content:not(:hover) .screenshot-image-section img[src*="dmrb-task-manager"] {
         max-height: 320px;
+    }
+    
+    .gallery-content:not(:hover) .screenshot-image-section img[src*="python-core-widgets"] {
+        max-height: 400px;
+        object-position: center center;
+        margin: auto 0;
+        align-self: center;
+        flex-shrink: 0;
     }
     
     /* Mobile individual adjustments */
