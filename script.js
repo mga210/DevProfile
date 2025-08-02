@@ -402,14 +402,15 @@ function handleContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault(); // Always prevent default to handle submission manually
+        
         // Get form data for validation
         const formData = new FormData(this);
         const data = Object.fromEntries(formData);
         
         // Basic validation
         if (!data.name || !data.email || !data.subject || !data.message) {
-            e.preventDefault();
             showNotification('Please fill in all fields', 'error');
             return;
         }
@@ -417,16 +418,51 @@ function handleContactForm() {
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(data.email)) {
-            e.preventDefault();
             showNotification('Please enter a valid email address', 'error');
             return;
         }
         
-        // Show success message before submission
-        showNotification('Sending message...', 'info');
+        // Show loading state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.querySelector('span').textContent;
+        submitBtn.querySelector('span').textContent = 'Sending...';
+        submitBtn.disabled = true;
         
-        // Let the form submit naturally to Formspree
         console.log('Submitting form to Formspree:', data);
+        
+        try {
+            // Submit to Formspree using fetch
+            const response = await fetch('https://formspree.io/f/xnnzbnob', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            console.log('Formspree response status:', response.status);
+            
+            if (response.ok) {
+                showNotification('✅ Message sent successfully! I\'ll get back to you soon.', 'success');
+                form.reset();
+            } else {
+                const responseData = await response.json();
+                console.log('Formspree error response:', responseData);
+                if (responseData.errors) {
+                    const errorMessages = responseData.errors.map(error => error.message).join(', ');
+                    showNotification(`❌ Error: ${errorMessages}`, 'error');
+                } else {
+                    showNotification('❌ There was an error sending your message. Please try again.', 'error');
+                }
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            showNotification('❌ Network error. Please check your connection and try again.', 'error');
+        } finally {
+            // Restore button state
+            submitBtn.querySelector('span').textContent = originalText;
+            submitBtn.disabled = false;
+        }
     });
 }
 

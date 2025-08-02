@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formspree Test</title>
+</head>
+<body>
+    <h1>Formspree Integration Test</h1>
+    
+    <form action="https://formspree.io/f/xnnzbnob" method="POST" id="test-form">
+        <p>
+            <label>Name: <input type="text" name="name" value="Test User" required></label>
+        </p>
+        <p>
+            <label>Email: <input type="email" name="email" value="test@example.com" required></label>
+        </p>
+        <p>
+            <label>Subject: <input type="text" name="subject" value="Test Message"></label>
+        </p>
+        <p>
+            <label>Message: <textarea name="message" required>This is a test message to verify Formspree integration.</textarea></label>
+        </p>
+        
+        <!-- Formspree configuration -->
+        <input type="hidden" name="_subject" value="Portfolio Contact Form - Test Message">
+        <input type="hidden" name="_next" value="https://mga210.github.io/DevProfile/#contact">
+        
+        <button type="submit">Send Test Message</button>
+    </form>
+    
+    <script>
+        document.getElementById('test-form').addEventListener('submit', function(e) {
+            console.log('Form submitted with data:', new FormData(this));
+            alert('Form submitted! Check console for details.');
+        });
+    </script>
+</body>
+</html>
