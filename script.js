@@ -1008,7 +1008,16 @@ function initMobileNavigation() {
     function checkMobileMode() {
         if (window.innerWidth <= 768) {
             document.body.classList.add('mobile-section-nav');
-            showMobileSection('hero');
+            // Make sure hero section is always visible on mobile
+            const heroSection = document.getElementById('hero');
+            if (heroSection) {
+                heroSection.classList.add('active-section');
+            }
+            // Update indicator
+            const indicator = document.querySelector('.mobile-nav-indicator');
+            if (indicator) {
+                indicator.textContent = 'Home';
+            }
         } else {
             document.body.classList.remove('mobile-section-nav');
             // Show all sections on desktop

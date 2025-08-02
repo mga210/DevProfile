@@ -1488,18 +1488,15 @@ section {
     }
 
     /* Mobile Section Navigation - Hide all sections by default */
-    .mobile-section-nav section:not(#hero) {
+    .mobile-section-nav section {
         display: none;
     }
 
-    .mobile-section-nav section.active-section {
-        display: block;
-        animation: fadeInUp 0.3s ease;
-    }
-
-    /* Hero section always visible on mobile */
+    /* Show active section or hero by default */
+    .mobile-section-nav section.active-section,
     .mobile-section-nav #hero {
-        display: block;
+        display: block !important;
+        animation: fadeInUp 0.3s ease;
     }
 
     /* Mobile navigation indicator */
