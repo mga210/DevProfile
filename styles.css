@@ -2019,6 +2019,37 @@ section {
     transition: all 0.3s ease;
 }
 
+/* Individual screenshot adjustments */
+.screenshot-image-section img[src*="dmrb-login"] {
+    object-fit: cover;
+    object-position: center top;
+}
+
+.screenshot-image-section img[src*="dmrb-dashboard"] {
+    object-fit: contain;
+    max-height: 550px;
+}
+
+.screenshot-image-section img[src*="dmrb-mr-board"] {
+    object-fit: contain;
+    max-height: 580px;
+}
+
+.screenshot-image-section img[src*="dmrb-task-manager"] {
+    object-fit: cover;
+    object-position: center top;
+}
+
+.screenshot-image-section img[src*="python-training"] {
+    object-fit: contain;
+    max-height: 520px;
+}
+
+.screenshot-image-section img[src*="CleanShot"] {
+    object-fit: contain;
+    max-height: 500px;
+}
+
 .screenshot-caption {
     height: 100%;
     display: flex;
@@ -2183,6 +2214,24 @@ section {
     
     .gallery-content:not(:hover) .screenshot-image-section img {
         max-height: 400px;
+    }
+    
+    /* Mobile individual adjustments */
+    .screenshot-image-section img[src*="dmrb-login"] {
+        max-height: 350px;
+        object-position: center top;
+    }
+    
+    .screenshot-image-section img[src*="dmrb-dashboard"] {
+        max-height: 320px;
+    }
+    
+    .screenshot-image-section img[src*="python-training"] {
+        max-height: 300px;
+    }
+    
+    .screenshot-image-section img[src*="CleanShot"] {
+        max-height: 280px;
     }
     
     .gallery-content:not(:hover) .screenshot-info-section {
