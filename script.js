@@ -506,7 +506,9 @@ const screenshotData = {
 };
 
 function openScreenshotGallery(projectName) {
+    console.log('Opening screenshot gallery for:', projectName);
     const screenshots = screenshotData[projectName] || [];
+    console.log('Screenshots found:', screenshots.length);
     
     if (screenshots.length === 0) {
         showNotification('Screenshots coming soon!', 'info');
@@ -519,12 +521,22 @@ function openScreenshotGallery(projectName) {
     const gallery = document.getElementById('screenshotGallery');
     const title = document.getElementById('galleryTitle');
     
-    title.textContent = `${projectName} - Screenshots`;
+    if (!gallery) {
+        console.error('Gallery element not found');
+        return;
+    }
+    
+    if (title) {
+        title.textContent = `${projectName} - Screenshots`;
+    }
     
     updateScreenshotDisplay();
     createThumbnails();
     
     gallery.style.display = 'block';
+    gallery.style.zIndex = '2000';
+    document.body.style.overflow = 'hidden';
+    
     setTimeout(() => {
         gallery.classList.add('show');
     }, 10);
@@ -532,10 +544,13 @@ function openScreenshotGallery(projectName) {
 
 function closeScreenshotGallery() {
     const gallery = document.getElementById('screenshotGallery');
-    gallery.classList.remove('show');
-    setTimeout(() => {
-        gallery.style.display = 'none';
-    }, 300);
+    if (gallery) {
+        gallery.classList.remove('show');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            gallery.style.display = 'none';
+        }, 300);
+    }
 }
 
 function updateScreenshotDisplay() {
