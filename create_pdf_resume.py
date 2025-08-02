@@ -124,31 +124,53 @@ def create_html_resume():
         <div class="section-title">SKILLS SUMMARY</div>
         
         <div class="skills-category">
-            <div class="skills-title">AI & Workflow Intelligence</div>
+            <div class="skills-title">AI & LLM Systems</div>
             <ul>
-                <li>GPT Agent Design, Prompt Architecture, Logic Scaffolding</li>
-                <li>Recursive Flows, Task Routing Systems, Lifecycle Modeling</li>
-                <li>Role-Based Interaction Flows, Instructional UX for Non-Technical Users</li>
+                <li>GPT Agent Design, Prompt Architecture, Logic Scaffolding, 16-Block Canvas Systems</li>
+                <li>Recursive Flows, Task Routing Systems, Lifecycle Modeling, Behavioral Frameworks</li>
+                <li>Role-Based Interaction Flows, Educational AI Design, Cognitive Load Adaptation</li>
+                <li>Clean Architecture Specification, GTPS Framework, Modular Dialogue Systems</li>
             </ul>
         </div>
 
         <div class="skills-category">
-            <div class="skills-title">Python Systems Development</div>
+            <div class="skills-title">Python Development</div>
             <ul>
-                <li>Python 3 (Modular Scripting, DTO Structures, API Basics)</li>
-                <li>Pandas (Data Structuring, Filtering, Export Pipelines)</li>
-                <li>PySide6 and Tkinter (GUI Architecture, Interaction Flows)</li>
-                <li>FastAPI (Lightweight API Services)</li>
-                <li>SQLite and Supabase (Layered DB Use, State Tracing, Portability)</li>
+                <li>Python 3 (Modular Scripting, DTO Structures, API Development, GUI Applications)</li>
+                <li>Pandas (Data Structuring, Filtering, Export Pipelines, Analytics)</li>
+                <li>PySide6 and Tkinter (GUI Architecture, Interactive Learning Environments, Desktop Applications)</li>
+                <li>FastAPI (Lightweight API Services, Database Integration)</li>
+                <li>SQLite and Supabase (Layered DB Use, State Tracing, Cloud Integration)</li>
             </ul>
         </div>
 
         <div class="skills-category">
-            <div class="skills-title">Automation & Data Tools</div>
+            <div class="skills-title">Data & Dashboards</div>
             <ul>
                 <li>Excel (Advanced Formulas, VBA, Macros, Conditional Logic)</li>
-                <li>Power BI (Custom Dashboards, Workflow Reporting)</li>
+                <li>Power BI (Custom Dashboards, Workflow Reporting, Analytics)</li>
                 <li>CMMS Data Structuring, Delay Tracking Logic, Heatmaps and Export Systems</li>
+                <li>Real-time Analytics, Service Manager Consoles, Performance Metrics</li>
+            </ul>
+        </div>
+
+        <div class="skills-category">
+            <div class="skills-title">Web Development</div>
+            <ul>
+                <li>HTML5, CSS3, JavaScript (Responsive Design, Interactive UIs)</li>
+                <li>Node.js, Express.js, TypeScript (Backend Development, API Integration)</li>
+                <li>PostgreSQL, Drizzle ORM (Database Management, Full-Stack Development)</li>
+                <li>Replit Development, Static Hosting, GitHub Pages Deployment</li>
+            </ul>
+        </div>
+
+        <div class="skills-category">
+            <div class="skills-title">Workflow Automation</div>
+            <ul>
+                <li>Legacy System Modernization, Excel-to-System Migration</li>
+                <li>Process Optimization, Business Intelligence, Operations Intelligence</li>
+                <li>Task Template Systems, Lifecycle Orchestration, State Management</li>
+                <li>Rapid Web Application Development, Full-Stack Solutions</li>
             </ul>
         </div>
     </div>
@@ -217,20 +239,44 @@ def create_html_resume():
         <ul>
             <li>Replaced spreadsheets with a logic-resolved unit coordination engine deployed across 3 properties</li>
             <li>Reduced turnover from 13–20 days to 7 with role-based access, task gating, and offline queueing</li>
+            <li>Features 13-screen interface including Service Manager Console, MR Board, Task Manager, and Analytics Dashboard</li>
+            <li>Implemented core dialogs system for lifecycle orchestration and system-wide sync triggers</li>
+        </ul>
+
+        <div class="project-title">Python Training Board (PTB)</div>
+        <div class="project-tech">Interactive Learning Environment | Python, Tkinter, PySide6, GUI Development</div>
+        <ul>
+            <li>Designed hands-on platform for GUI development training using sandbox-style experimentation</li>
+            <li>Built modular demo launchers with authorization flow, framework selection hub, and training interfaces</li>
+            <li>Features folder copy/isolate system, UI component explorer, and editable canvas with real-time code reflection</li>
+            <li>Supports both PySide6 and Tkinter frameworks with structured layout training and code exploration mode</li>
         </ul>
 
         <div class="project-title">System Pilot</div>
-        <div class="project-tech">GPT-Powered Architecture Strategist | Prompt Logic, Modular Dialogues, Python</div>
+        <div class="project-tech">GPT-Powered Architecture Strategist | 16-Phase GTPS Framework, Clean Architecture</div>
         <ul>
-            <li>Designed a GPT assistant that guides users from raw product ideas into full system blueprints</li>
-            <li>Enforced architectural planning through modular dialogue and logic scaffolding</li>
+            <li>Designed deterministic GPT assistant operating through 3-phase pipeline with 16-phase GTPS framework</li>
+            <li>Transforms software ideas into implementation-ready Clean Architecture blueprints with modular specifications</li>
+            <li>Enforces architectural boundaries through structured file tree generation and module discovery interrogation</li>
+            <li>Outputs YAML, JSON, MD formats with developer-ready specs and blocking protocol enforcement</li>
         </ul>
 
         <div class="project-title">Blueprint Buddy</div>
-        <div class="project-tech">Modular GPT Instruction Builder | Prompt Architecture, Python, Logic System Design</div>
+        <div class="project-tech">Modular GPT Instruction Architect | 16-Block Logic Canvas, Validation Engines</div>
         <ul>
-            <li>Built a scalable system to translate user input into structured, validated GPT instructions</li>
-            <li>Used by product leads and toolmakers to deploy prompt systems with embedded logic flows</li>
+            <li>Built full-scale GPT builder transforming user intent into logic-rich, exportable instruction sets</li>
+            <li>Features 16-block logic canvas with embedded validation engines and multi-format output capabilities</li>
+            <li>Performs intent-to-logic transformation with advanced prompt optimization and system logic optimization</li>
+            <li>Educational AI system with mentor-like behavior and cognitive load adaptation for structured learning</li>
+        </ul>
+
+        <div class="project-title">Meta Code Sensei</div>
+        <div class="project-tech">Educational AI Assistant | Biological Metaphors, Mentor Behavior, Adaptive Learning</div>
+        <ul>
+            <li>Developed sophisticated educational AI with biological metaphor framework for code instruction</li>
+            <li>Implements mentor-like behavior with cognitive load adaptation and structured learning approaches</li>
+            <li>Features 16-phase behavioral framework for personalized developer guidance and skill building</li>
+            <li>Designed for beginner-stage developers using AI-first approach for rapid skill acquisition</li>
         </ul>
     </div>
 </body>

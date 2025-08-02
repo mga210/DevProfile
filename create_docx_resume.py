@@ -127,22 +127,36 @@ Now seeking roles where I can continue designing agent-powered workflows, intern
     add_heading_with_style(doc, "SKILLS SUMMARY", 1)
     
     skills_data = [
-        ("AI & Workflow Intelligence", [
-            "GPT Agent Design, Prompt Architecture, Logic Scaffolding",
-            "Recursive Flows, Task Routing Systems, Lifecycle Modeling",
-            "Role-Based Interaction Flows, Instructional UX for Non-Technical Users"
+        ("AI & LLM Systems", [
+            "GPT Agent Design, Prompt Architecture, Logic Scaffolding, 16-Block Canvas Systems",
+            "Recursive Flows, Task Routing Systems, Lifecycle Modeling, Behavioral Frameworks",
+            "Role-Based Interaction Flows, Educational AI Design, Cognitive Load Adaptation",
+            "Clean Architecture Specification, GTPS Framework, Modular Dialogue Systems"
         ]),
-        ("Python Systems Development", [
-            "Python 3 (Modular Scripting, DTO Structures, API Basics)",
-            "Pandas (Data Structuring, Filtering, Export Pipelines)",
-            "PySide6 and Tkinter (GUI Architecture, Interaction Flows)",
-            "FastAPI (Lightweight API Services)",
-            "SQLite and Supabase (Layered DB Use, State Tracing, Portability)"
+        ("Python Development", [
+            "Python 3 (Modular Scripting, DTO Structures, API Development, GUI Applications)",
+            "Pandas (Data Structuring, Filtering, Export Pipelines, Analytics)",
+            "PySide6 and Tkinter (GUI Architecture, Interactive Learning Environments, Desktop Applications)",
+            "FastAPI (Lightweight API Services, Database Integration)",
+            "SQLite and Supabase (Layered DB Use, State Tracing, Cloud Integration)"
         ]),
-        ("Automation & Data Tools", [
+        ("Data & Dashboards", [
             "Excel (Advanced Formulas, VBA, Macros, Conditional Logic)",
-            "Power BI (Custom Dashboards, Workflow Reporting)",
-            "CMMS Data Structuring, Delay Tracking Logic, Heatmaps and Export Systems"
+            "Power BI (Custom Dashboards, Workflow Reporting, Analytics)",
+            "CMMS Data Structuring, Delay Tracking Logic, Heatmaps and Export Systems",
+            "Real-time Analytics, Service Manager Consoles, Performance Metrics"
+        ]),
+        ("Web Development", [
+            "HTML5, CSS3, JavaScript (Responsive Design, Interactive UIs)",
+            "Node.js, Express.js, TypeScript (Backend Development, API Integration)",
+            "PostgreSQL, Drizzle ORM (Database Management, Full-Stack Development)",
+            "Replit Development, Static Hosting, GitHub Pages Deployment"
+        ]),
+        ("Workflow Automation", [
+            "Legacy System Modernization, Excel-to-System Migration",
+            "Process Optimization, Business Intelligence, Operations Intelligence",
+            "Task Template Systems, Lifecycle Orchestration, State Management",
+            "Rapid Web Application Development, Full-Stack Solutions"
         ])
     ]
     
@@ -212,17 +226,35 @@ Now seeking roles where I can continue designing agent-powered workflows, intern
     add_heading_with_style(doc, "KEY PROJECTS", 1)
     
     projects = [
-        ("Make Ready Digital Board (DMRB)", "AI-Powered Task Lifecycle System", [
+        ("Make Ready Digital Board (DMRB)", "AI-Powered Task Lifecycle System | Python, Pandas, PySide6, FastAPI, SQLite → Supabase", [
             "Replaced spreadsheets with a logic-resolved unit coordination engine deployed across 3 properties",
-            "Reduced turnover from 13–20 days to 7 with role-based access, task gating, and offline queueing"
+            "Reduced turnover from 13–20 days to 7 with role-based access, task gating, and offline queueing",
+            "Features 13-screen interface including Service Manager Console, MR Board, Task Manager, and Analytics Dashboard",
+            "Implemented core dialogs system for lifecycle orchestration and system-wide sync triggers"
         ]),
-        ("System Pilot", "GPT-Powered Architecture Strategist", [
-            "Designed a GPT assistant that guides users from raw product ideas into full system blueprints",
-            "Enforced architectural planning through modular dialogue and logic scaffolding"
+        ("Python Training Board (PTB)", "Interactive Learning Environment | Python, Tkinter, PySide6, GUI Development", [
+            "Designed hands-on platform for GUI development training using sandbox-style experimentation",
+            "Built modular demo launchers with authorization flow, framework selection hub, and training interfaces",
+            "Features folder copy/isolate system, UI component explorer, and editable canvas with real-time code reflection",
+            "Supports both PySide6 and Tkinter frameworks with structured layout training and code exploration mode"
         ]),
-        ("Blueprint Buddy", "Modular GPT Instruction Builder", [
-            "Built a scalable system to translate user input into structured, validated GPT instructions",
-            "Used by product leads and toolmakers to deploy prompt systems with embedded logic flows"
+        ("System Pilot", "GPT-Powered Architecture Strategist | 16-Phase GTPS Framework, Clean Architecture", [
+            "Designed deterministic GPT assistant operating through 3-phase pipeline with 16-phase GTPS framework",
+            "Transforms software ideas into implementation-ready Clean Architecture blueprints with modular specifications",
+            "Enforces architectural boundaries through structured file tree generation and module discovery interrogation",
+            "Outputs YAML, JSON, MD formats with developer-ready specs and blocking protocol enforcement"
+        ]),
+        ("Blueprint Buddy", "Modular GPT Instruction Architect | 16-Block Logic Canvas, Validation Engines", [
+            "Built full-scale GPT builder transforming user intent into logic-rich, exportable instruction sets",
+            "Features 16-block logic canvas with embedded validation engines and multi-format output capabilities",
+            "Performs intent-to-logic transformation with advanced prompt optimization and system logic optimization",
+            "Educational AI system with mentor-like behavior and cognitive load adaptation for structured learning"
+        ]),
+        ("Meta Code Sensei", "Educational AI Assistant | Biological Metaphors, Mentor Behavior, Adaptive Learning", [
+            "Developed sophisticated educational AI with biological metaphor framework for code instruction",
+            "Implements mentor-like behavior with cognitive load adaptation and structured learning approaches",
+            "Features 16-phase behavioral framework for personalized developer guidance and skill building",
+            "Designed for beginner-stage developers using AI-first approach for rapid skill acquisition"
         ])
     ]
     
