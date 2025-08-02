@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initNavigation();
     initScrollAnimations();
-    // initContactForm(); // Removed to prevent form interference
+    initContactForm();
     initBackToTop();
     initSkillBars();
     initTypewriter();
@@ -103,7 +103,30 @@ function initScrollAnimations() {
     });
 }
 
-// Contact form - No JavaScript interference, let Formspree handle everything
+// Contact form - Handle success message and form reset
+function initContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            
+            // Show loading state
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitButton.disabled = true;
+            
+            // Allow form to submit to Formspree
+            // After submission, show success message and reset form
+            setTimeout(() => {
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+                showNotification('Thank you! Your message has been sent successfully.', 'success');
+                contactForm.reset();
+            }, 3000);
+        });
+    }
+}
 
 function showNotification(message, type = 'info') {
     // Create notification element
