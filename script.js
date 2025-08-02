@@ -352,6 +352,12 @@ function openProjectModal(projectCard) {
     const title = projectCard.querySelector('.project-title').textContent;
     const description = projectCard.querySelector('.project-description').textContent;
     const techTags = Array.from(projectCard.querySelectorAll('.tech-tag')).map(tag => tag.textContent);
+    const detailedInfo = projectCard.querySelector('.project-details');
+    
+    let detailedContent = '';
+    if (detailedInfo) {
+        detailedContent = detailedInfo.innerHTML;
+    }
     
     // Create modal content
     const modalContent = `
@@ -363,6 +369,7 @@ function openProjectModal(projectCard) {
             <div class="project-modal-description">
                 <p>${description}</p>
             </div>
+            ${detailedContent ? `<div class="project-modal-detailed">${detailedContent}</div>` : ''}
             <div class="project-modal-tech">
                 <h3>Technologies Used:</h3>
                 <div class="tech-tags">
