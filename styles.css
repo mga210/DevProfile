@@ -2026,8 +2026,10 @@ section {
 }
 
 .screenshot-image-section img[src*="dmrb-dashboard"] {
-    object-fit: contain;
-    max-height: 550px;
+    object-fit: scale-down;
+    max-height: 500px;
+    width: auto;
+    max-width: 100%;
 }
 
 .screenshot-image-section img[src*="dmrb-mr-board"] {
@@ -2036,8 +2038,11 @@ section {
 }
 
 .screenshot-image-section img[src*="dmrb-task-manager"] {
-    object-fit: cover;
-    object-position: center top;
+    object-fit: scale-down;
+    max-height: 520px;
+    width: auto;
+    max-width: 100%;
+    object-position: center;
 }
 
 .screenshot-image-section img[src*="python-training"] {
@@ -2223,7 +2228,13 @@ section {
     }
     
     .screenshot-image-section img[src*="dmrb-dashboard"] {
-        max-height: 320px;
+        max-height: 300px;
+        object-fit: scale-down;
+    }
+    
+    .screenshot-image-section img[src*="dmrb-task-manager"] {
+        max-height: 310px;
+        object-fit: scale-down;
     }
     
     .screenshot-image-section img[src*="python-training"] {
