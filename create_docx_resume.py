@@ -7,6 +7,37 @@ from docx import Document
 from docx.shared import Inches, Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.shared import OxmlElement, qn
+from docx.oxml.ns import nsdecls
+from docx.oxml import parse_xml
+
+def add_hyperlink(paragraph, url, text):
+    """Add a hyperlink to a paragraph"""
+    # This gets access to the document.xml.rels file and gets a new relation id value
+    part = paragraph.part
+    r_id = part.relate_to(url, "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink", is_external=True)
+
+    # Create the w:hyperlink tag and add needed values
+    hyperlink = OxmlElement('w:hyperlink')
+    hyperlink.set(qn('r:id'), r_id, )
+
+    # Create a new Run object and add the text
+    new_run = OxmlElement('w:r')
+
+    # Set the run's style to hyperlink
+    rPr = OxmlElement('w:rPr')
+    color = OxmlElement('w:color')
+    color.set(qn('w:val'), "0563C1")
+    rPr.append(color)
+    u = OxmlElement('w:u')
+    u.set(qn('w:val'), 'single')
+    rPr.append(u)
+    new_run.append(rPr)
+    new_run.text = text
+
+    hyperlink.append(new_run)
+    paragraph._p.append(hyperlink)
+
+    return hyperlink
 
 def add_heading_with_style(doc, text, level=1):
     """Add a styled heading to the document"""
@@ -58,8 +89,17 @@ def create_docx_resume():
     contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
     contact.space_after = Pt(6)
     
-    links = doc.add_paragraph("LinkedIn: linkedin.com/in/miguel-gonzalez-8a389791 • Portfolio • GitHub")
+    # Create paragraph with clickable links
+    links = doc.add_paragraph()
     links.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    
+    # Add hyperlinks
+    add_hyperlink(links, "https://www.linkedin.com/in/miguel-gonzalez-8a389791", "LinkedIn")
+    links.add_run(" • ")
+    add_hyperlink(links, "https://mga210.github.io/DevProfile/", "Portfolio")
+    links.add_run(" • ")
+    add_hyperlink(links, "https://github.com/mga210", "GitHub")
+    
     links.space_after = Pt(12)
     
     # Professional tagline
