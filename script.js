@@ -424,25 +424,40 @@ function handleContactForm() {
         
         // Show loading state
         const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
+        const originalText = submitBtn.querySelector('span').textContent;
+        submitBtn.querySelector('span').textContent = 'Sending...';
         submitBtn.disabled = true;
         
         try {
-            // For GitHub Pages, use Formspree (replace with your form endpoint)
-            // Alternative: Use mailto link as fallback
-            const mailtoLink = `mailto:mgonzalez869@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`)}`;
+            // Submit to Formspree
+            const response = await fetch('https://formspree.io/f/xnnzbnob', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
             
-            // Open default email client
-            window.location.href = mailtoLink;
-            
-            showNotification('Opening your email client to send the message...', 'success');
-            form.reset();
+            if (response.ok) {
+                showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+                form.reset();
+            } else {
+                const responseData = await response.json();
+                if (responseData.errors) {
+                    const errorMessages = responseData.errors.map(error => error.message).join(', ');
+                    showNotification(`Error: ${errorMessages}`, 'error');
+                } else {
+                    showNotification('There was an error sending your message. Please try again.', 'error');
+                }
+            }
         } catch (error) {
-            console.error('Error opening email client:', error);
-            showNotification('Please email me directly at mgonzalez869@gmail.com', 'info');
+            console.error('Error submitting form:', error);
+            // Fallback to mailto
+            const mailtoLink = `mailto:mgonzalez869@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`)}`;
+            window.location.href = mailtoLink;
+            showNotification('Network error - opened email client as backup', 'info');
         } finally {
-            submitBtn.textContent = originalText;
+            submitBtn.querySelector('span').textContent = originalText;
             submitBtn.disabled = false;
         }
     });
