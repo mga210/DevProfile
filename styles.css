@@ -1994,10 +1994,11 @@ section {
 .screenshot-image-section img {
     width: 100%;
     height: auto;
-    max-height: 500px;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-height: 600px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     object-fit: contain;
+    transition: all 0.3s ease;
 }
 
 .screenshot-caption {
@@ -2026,33 +2027,38 @@ section {
 
 .screenshot-thumbnails {
     display: flex;
-    gap: 8px;
+    gap: 12px;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 15px 20px;
+    padding: 20px 25px;
     background: #f8f9fa;
     border-top: 1px solid #e9ecef;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
+    min-height: 120px;
 }
 
 .thumbnail {
-    width: 80px;
-    height: 60px;
-    border-radius: 4px;
+    width: 100px;
+    height: 75px;
+    border-radius: 8px;
     cursor: pointer;
     opacity: 0.6;
     transition: all 0.3s ease;
     object-fit: cover;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .thumbnail:hover,
 .thumbnail.active {
     opacity: 1;
     border-color: #667eea;
-    transform: scale(1.05);
+    transform: scale(1.15);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    z-index: 10;
+    position: relative;
 }
 
 .screenshot-counter {
@@ -2115,8 +2121,9 @@ section {
     }
     
     .thumbnail {
-        width: 60px;
-        height: 45px;
+        width: 75px;
+        height: 55px;
+        flex-shrink: 0;
     }
     
     .screenshot-caption h4 {
@@ -2134,7 +2141,9 @@ section {
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        padding: 15px 10px;
+        padding: 20px 15px;
+        gap: 15px;
+        min-height: 100px;
     }
     
     .screenshot-thumbnails::-webkit-scrollbar {
