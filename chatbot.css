@@ -294,18 +294,23 @@
 /* Mobile Responsiveness */
 @media (max-width: 480px) {
     .chatbot-window {
-        width: calc(100vw - 20px);
-        height: calc(100vh - 120px);
+        width: calc(100vw - 30px);
+        height: calc(100vh - 140px);
         bottom: 75px;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-        max-width: 400px;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        max-width: 380px;
+        position: fixed !important;
+        margin: 0 auto;
     }
     
     .chatbot-container {
-        right: 20px;
-        bottom: 90px;
+        position: fixed !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        bottom: 20px;
     }
     
     .chatbot-messages {
