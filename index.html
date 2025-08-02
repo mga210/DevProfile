@@ -62,7 +62,7 @@
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">View My Work</a>
                         <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                        <a href="#" class="btn btn-outline" onclick="downloadResume()">
+                        <a href="#" class="btn btn-outline" onclick="openResumeModal()">
                             <i class="fas fa-download"></i> Download Resume
                         </a>
                     </div>
@@ -1054,6 +1054,36 @@
     <button class="back-to-top" id="back-to-top" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </button>
+
+    <!-- Resume Download Modal -->
+    <div id="resumeModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+            <div class="modal-header">
+                <h3 id="modal-title">Choose your format</h3>
+                <button class="modal-close" onclick="closeResumeModal()" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="format-options">
+                    <label class="format-option">
+                        <input type="radio" name="resumeFormat" value="pdf" checked>
+                        <span class="format-icon">📄</span>
+                        <span class="format-text">PDF</span>
+                    </label>
+                    <label class="format-option">
+                        <input type="radio" name="resumeFormat" value="docx">
+                        <span class="format-icon">📝</span>
+                        <span class="format-text">DOCX</span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeResumeModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="downloadSelectedResume()">OK</button>
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScript -->
     <script src="script.js"></script>

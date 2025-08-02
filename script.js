@@ -555,52 +555,68 @@ observeElements('.cert-item');
 observeElements('.service-card');
 
 // Resume download function
-function downloadResume() {
-    // Create a simple resume download (you can replace with actual resume file)
-    const resumeContent = `Miguel A. Gonzalez Almonte
-AI Developer | Software Systems Thinker | Organizational Intelligence
-Email: mgonzalez869@gmail.com | Phone: 787-367-9843 | Location: Plano, TX
-LinkedIn: linkedin.com/in/miguel-gonzalez-8a389791
-
-PROFESSIONAL SUMMARY
-Strategic systems thinker with a background in operations leadership and a forward trajectory in AI development, software engineering, and data analytics. Experienced in building tools that streamline processes, surface meaningful insights, and support faster, more informed decision-making.
-
-TECHNICAL SKILLS
-- AI & LLM Systems: GPT Prompt Engineering, Agent Design & Logic Flows, Decision Automation
-- Python Development: Modular Scripting, API Concepts, PySide6/Tkinter GUI Development
-- Data & Analytics: Power BI Dashboards, Insight Extraction, Conditional Logic, Workflow-Based Reporting
-
-PROJECTS
-- System Pilot: GPT-Powered Software Architecture Strategist
-- Blueprint Buddy: Modular GPT Instruction Architect  
-- MakeReady Digital Board (DMRB): Task Lifecycle Engine for Apartment Turnovers
-- Meta Code Sensei: Phase-Based Python Mentor and Architecture Coach
-- Python Training Board (PTB): Interactive Python GUI Learning Environment
-
-PROFESSIONAL EXPERIENCE
-Service Maintenance Manager - MAA (Jun 2023 – Present)
-Service Manager - RPM Living (May 2022 – Jun 2023)
-Independent Contractor - First Choice/FSI (Jan 2020 – May 2022)
-
-EDUCATION
-Ana G. Méndez University – Bachelor of Business Administration in Computer Information Systems (In Progress)
-Google Project Management Certificate – Coursera (2025)
-Python for Everybody – University of Michigan / Coursera (2025)
-Python 3 – Intermediate Track (In Progress, 2025)`;
-
-    const blob = new Blob([resumeContent], { type: 'text/plain' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.style.display = 'none';
-    a.href = url;
-    a.download = 'Miguel_Gonzalez_Resume.txt';
-    document.body.appendChild(a);
-    a.click();
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(a);
+// Resume Modal Functions
+function openResumeModal() {
+    const modal = document.getElementById('resumeModal');
+    modal.style.display = 'flex';
+    setTimeout(() => {
+        modal.classList.add('show');
+    }, 10);
     
+    // Focus trap for accessibility
+    const firstFocusableElement = modal.querySelector('input[type="radio"]');
+    firstFocusableElement?.focus();
+}
+
+function closeResumeModal() {
+    const modal = document.getElementById('resumeModal');
+    modal.classList.remove('show');
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300);
+}
+
+function downloadSelectedResume() {
+    const selectedFormat = document.querySelector('input[name="resumeFormat"]:checked').value;
+    const link = document.createElement('a');
+    
+    if (selectedFormat === 'pdf') {
+        link.href = 'resume.pdf';
+        link.download = 'Miguel_Gonzalez_Resume.pdf';
+    } else {
+        link.href = 'resume.docx';
+        link.download = 'Miguel_Gonzalez_Resume.docx';
+    }
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    closeResumeModal();
     showNotification('Resume downloaded successfully!', 'success');
 }
+
+// Close modal with escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const modal = document.getElementById('resumeModal');
+        if (modal && modal.classList.contains('show')) {
+            closeResumeModal();
+        }
+    }
+});
+
+// Close modal when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('resumeModal');
+    if (modal) {
+        modal.addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeResumeModal();
+            }
+        });
+    }
+});
 
 // Console easter egg
 console.log(`
