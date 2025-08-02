@@ -241,25 +241,30 @@ class MiguelChatbot {
             const toggle = document.getElementById('chatbot-toggle');
             if (!toggle) return;
             
+            // Check if mobile
+            const isMobile = window.innerWidth <= 480;
+            const openDelay = isMobile ? 2000 : 3000; // 2s mobile, 3s desktop
+            const closeDelay = isMobile ? 4000 : 10000; // 4s mobile, 10s desktop
+            
             // Add pulsing animation to get attention
             setTimeout(() => {
                 toggle.classList.add('pulse');
             }, 1000);
             
-            // Auto-open chatbot after 3 seconds, then close after 10 seconds
+            // Auto-open chatbot
             setTimeout(() => {
                 if (!this.isOpen && toggle) {
                     toggle.classList.remove('pulse');
                     this.toggleChatbot();
                     
-                    // Auto-close after 10 seconds
+                    // Auto-close after specified time
                     setTimeout(() => {
                         if (this.isOpen) {
                             this.toggleChatbot();
                         }
-                    }, 10000);
+                    }, closeDelay);
                 }
-            }, 3000);
+            }, openDelay);
         }, 100);
     }
 
