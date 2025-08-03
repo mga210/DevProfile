@@ -280,14 +280,52 @@ class MiguelChatbot {
     getStaticResponse(message) {
         const lowerMessage = message.toLowerCase();
         
-        // Background and journey
-        if (lowerMessage.includes('background') || lowerMessage.includes('story') || lowerMessage.includes('journey') || lowerMessage.includes('career')) {
-            return "Miguel never held a formal software title, but independently built real-world tools used in production environments across multiple properties. He transitioned from operations and service management into AI and software design by solving problems firsthand. His career began at Universal Studios, grew through technical service roles, and matured into self-driven software development — always focused on improving operational outcomes through logic and clarity.";
+        // Background and journey - comprehensive response
+        if (lowerMessage.includes('background') || lowerMessage.includes('story') || lowerMessage.includes('journey') || lowerMessage.includes('career') || lowerMessage.includes('experience') || lowerMessage.includes('timeline')) {
+            return `**Miguel's Professional Journey:**
+
+**🎬 Universal Studios (Origins)**: Started in entertainment operations, learning systems thinking through complex operational challenges
+
+**🏢 Mid-Atlantic Apartment Communities (MAA)**: Service Maintenance Manager leading 3+ properties, where he identified operational inefficiencies and began developing digital solutions
+
+**🏗️ RPM Living**: Technology integration roles focusing on process optimization and digital transformation
+
+**🤖 Current - Independent AI Systems Developer**: Self-driven transition into AI systems development, building production tools without formal software titles
+
+**Key Transition Points:**
+- Recognized that operational problems needed systematic, not manual solutions  
+- Started building Python tools to solve real workplace challenges
+- Developed DMRB coordination engine that achieved 40% efficiency improvements
+- Evolved from operations manager to systems architect through hands-on problem solving
+
+Miguel's unique path combines deep operational knowledge with self-taught technical skills, making him uniquely positioned to build AI systems that actually solve business problems.`;
         }
         
-        // DMRB and production systems
-        if (lowerMessage.includes('dmrb') || lowerMessage.includes('make ready') || lowerMessage.includes('digital board') || lowerMessage.includes('production')) {
-            return "The DMRB (Make Ready Digital Board) is Miguel's flagship achievement — a full-scale Python coordination engine for managing unit turnovers. This production system reduced delays, eliminated spreadsheet chaos, and introduced lifecycle logic with real enforcement. It's deployed across multiple properties and demonstrates his ability to architect solutions that work in real operational environments.";
+        // DMRB and production systems - detailed technical response
+        if (lowerMessage.includes('dmrb') || lowerMessage.includes('make ready') || lowerMessage.includes('digital board') || lowerMessage.includes('production') || lowerMessage.includes('coordination') || lowerMessage.includes('apartment') || lowerMessage.includes('unit')) {
+            return `**DMRB (Make Ready Digital Board) - Technical Deep Dive:**
+
+**🏗️ System Architecture:**
+- **Frontend**: PySide6 GUI with clean separation from business logic
+- **Backend**: Python with SQLite database and Pandas for data processing  
+- **Architecture**: DTO patterns, lifecycle state management, real-time updates
+- **Deployment**: Multi-property production environment
+
+**⚙️ Core Features:**
+- **Automated Workflow Enforcement**: Task dependencies and resource allocation
+- **Lifecycle Logic**: State transitions with validation and rollback capabilities
+- **Real-time Coordination**: Live updates across teams and properties
+- **Role-based Access**: Different views for maintenance, management, and admin
+- **Compliance Checking**: Automated validation of regulatory requirements
+
+**📊 Business Impact:**
+- **40% reduction** in unit turnover time
+- **Eliminated double-booking conflicts** through intelligent scheduling
+- **Replaced Excel chaos** with structured, auditable workflows
+- **Deployed across multiple properties** with measurable ROI
+
+**🚀 Technical Innovation:**
+Miguel built this without formal software training, using operations expertise to design workflows that actually match how teams work in practice. The system bridges the gap between business needs and technical implementation.`;
         }
         
         // Technical skills and architecture
@@ -305,9 +343,41 @@ class MiguelChatbot {
             return "Miguel uses Replit to build and deploy web-based tools, even though he doesn't code HTML/JS from scratch. He assembles, structures, and deploys full projects using no-code/low-code workflows, smart design choices, and AI-assisted coding. This approach lets him focus on solving business problems rather than getting bogged down in frontend implementation details.";
         }
         
-        // Projects and tools
-        if (lowerMessage.includes('project') || lowerMessage.includes('tools') || lowerMessage.includes('system pilot') || lowerMessage.includes('blueprint')) {
-            return "Miguel builds grounded, real-world solutions:\n\n• **DMRB** - Full-scale Python coordination engine for unit turnovers, deployed across multiple properties\n• **System Pilot** - GPT-powered architecture strategist\n• **Blueprint Buddy** - Prompt engineering optimization tool\n• **Python Training Board** - GUI learning platform\n\nEverything Miguel builds is tested, deployed, and used live by real teams — not hypothetical projects.";
+        // Projects and tools - comprehensive technical breakdown
+        if (lowerMessage.includes('project') || lowerMessage.includes('tools') || lowerMessage.includes('system pilot') || lowerMessage.includes('blueprint') || lowerMessage.includes('portfolio') || lowerMessage.includes('built') || lowerMessage.includes('developed')) {
+            return `**Miguel's Technical Project Portfolio:**
+
+**🏗️ DMRB (Make Ready Digital Board)**
+- **Type**: Full-scale Python coordination engine
+- **Technology**: PySide6, SQLite, Pandas, lifecycle state management
+- **Impact**: 40% efficiency gain, deployed across multiple properties
+- **Innovation**: Replaced Excel chaos with structured workflows
+
+**🤖 System Pilot**  
+- **Type**: GPT-powered software architecture strategist
+- **Technology**: GPT-4, LangChain, prompt chaining, AI analysis
+- **Purpose**: Code review, architecture recommendations, best practices
+- **Unique Angle**: Combines operational experience with AI insights
+
+**🔧 Blueprint Buddy**
+- **Type**: Advanced prompt engineering optimization platform  
+- **Technology**: Python, FastAPI, OpenAI integration, A/B testing
+- **Features**: Systematic prompt refinement, quality metrics, iterative improvement
+- **Applications**: AI agent development, chatbot optimization
+
+**🐍 Python Training Board**
+- **Type**: Interactive GUI-based learning management system
+- **Technology**: PySide6, modular architecture, plugin system
+- **Approach**: Hands-on exercises, real-time feedback, progressive difficulty
+- **Focus**: Bridge theory-to-practice gap in Python education
+
+**🌐 Portfolio Website (This Site)**
+- **Type**: Full-stack web application with AI chatbot
+- **Technology**: HTML/CSS/JS frontend, Node.js backend, PostgreSQL
+- **Features**: Intelligent chatbot, analytics, contact management
+- **Deployment**: Dual compatibility (Replit + GitHub Pages)
+
+All projects are production-deployed and solving real problems, not just demos.`;
         }
         
         // AI and automation focus
@@ -340,8 +410,20 @@ class MiguelChatbot {
             return "Hello! I'm Miguel's intelligent assistant with deep knowledge of his technical journey, projects, and expertise. I can discuss his real-world AI tools, Python coordination systems, architectural approaches, and his evolution from operations to self-driven software development. What would you like to explore?";
         }
         
-        // Default response reflecting enhanced intelligence  
-        return "I have comprehensive knowledge of Miguel's technical work, from his DMRB coordination engine to his AI development approach. I can discuss his projects in detail, explain his architectural thinking, or explore how his operations background influences his software design. What specific aspect interests you most?";
+        // Comprehensive fallback with multiple relevant aspects
+        return `I can help with any aspect of Miguel's profile! Here are some key areas:
+
+**🚀 Technical Projects**: DMRB coordination engine (40% efficiency gain), System Pilot AI assistant, Blueprint Buddy prompt optimizer, Python Training Board
+
+**🛠️ Technical Skills**: Python (PySide6, Tkinter, Pandas, FastAPI), AI/LLM integration (GPT-4, LangChain), database design (SQLite, Supabase), clean architecture patterns
+
+**📈 Professional Journey**: Universal Studios → MAA Properties → RPM Living → Independent AI Developer. Led 50+ team training, $25K+ cost savings, operations-to-tech transition
+
+**🎯 Current Focus**: AI-driven operational intelligence, no-code/low-code deployment on Replit, system architecture consulting
+
+**🎓 Education**: BBA Computer Information Systems (Ana G. Méndez), Google PM certification, Python specialization
+
+What specific area would you like to explore in detail?`;
     }
 }
 
