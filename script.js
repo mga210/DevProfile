@@ -974,6 +974,309 @@ function downloadSelectedResume() {
     showNotification('Resume downloaded successfully!', 'success');
 }
 
+// Service Modal Functions
+function openServiceModal(serviceId) {
+    const modal = document.getElementById('serviceModal');
+    const modalContent = modal.querySelector('.service-modal-content');
+    
+    modalContent.innerHTML = getServiceMenuContent(serviceId);
+    modal.style.display = 'flex';
+    setTimeout(() => {
+        modal.classList.add('show');
+    }, 10);
+    document.body.style.overflow = 'hidden';
+}
+
+function closeServiceModal() {
+    const modal = document.getElementById('serviceModal');
+    modal.classList.remove('show');
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300);
+    document.body.style.overflow = 'auto';
+}
+
+function getServiceMenuContent(serviceId) {
+    const serviceMenus = {
+        'legacy-modernization': {
+            title: '📤 Legacy System Modernization',
+            subtitle: 'Modernize old Excel tools, reduce human error, and improve coordination.',
+            services: [
+                {
+                    emoji: '🔄',
+                    title: 'Excel-to-System Migration',
+                    description: 'Convert Excel workflows into web or Python tools',
+                    price: '$400–$800'
+                },
+                {
+                    emoji: '🔁',
+                    title: 'Workflow Logic Implementation',
+                    description: 'Automate manual logic and processes (e.g., status flows, IFs)',
+                    price: '$300–$700'
+                },
+                {
+                    emoji: '👨‍🏫',
+                    title: 'Change Mgmt & User Training',
+                    description: 'Train teams on new systems, onboard documentation',
+                    price: '$200–$500'
+                }
+            ]
+        },
+        'rapid-web': {
+            title: '🚀 Rapid Web Application Development',
+            subtitle: 'Deliver fully functional apps, fast, using modern tools.',
+            services: [
+                {
+                    emoji: '⚡',
+                    title: 'Replit-Based Deployment',
+                    description: 'Build & host via Replit for quick iteration',
+                    price: '$150–$400'
+                },
+                {
+                    emoji: '🌐',
+                    title: 'Full-Stack Web App (Node.js)',
+                    description: 'Back-end + front-end + routing + logic',
+                    price: '$600–$1,500'
+                },
+                {
+                    emoji: '🔗',
+                    title: 'Database + Real-Time Features',
+                    description: 'Use PostgreSQL, Firebase, or socket events',
+                    price: '+$200–$500'
+                }
+            ]
+        },
+        'data-analysis': {
+            title: '📊 Data Analysis & Insights',
+            subtitle: 'Unlock decisions from raw data using Python and analytics.',
+            services: [
+                {
+                    emoji: '🐼',
+                    title: 'Python Data Prep w/ Pandas',
+                    description: 'Data cleaning, transformation, validation',
+                    price: '$300–$700'
+                },
+                {
+                    emoji: '📈',
+                    title: 'Statistical Analysis & Modeling',
+                    description: 'Forecasting, regression, clustering, etc.',
+                    price: '$500–$1,200'
+                },
+                {
+                    emoji: '📊',
+                    title: 'Data Viz & Dashboarding',
+                    description: 'Build charts & exportable reports (Matplotlib, Seaborn, Plotly)',
+                    price: '$250–$600'
+                }
+            ]
+        },
+        'operations-intelligence': {
+            title: '📈 Operations Intelligence',
+            subtitle: 'Turn raw ops data into dashboards & performance metrics.',
+            services: [
+                {
+                    emoji: '📊',
+                    title: 'Power BI Dashboard Creation',
+                    description: 'Create dynamic, filterable dashboards in Power BI',
+                    price: '$500–$1,200'
+                },
+                {
+                    emoji: '📌',
+                    title: 'Process Mapping & Optimization',
+                    description: 'Visual flow design + recommendations',
+                    price: '$350–$700'
+                },
+                {
+                    emoji: '🎯',
+                    title: 'KPI & Metrics Tracking',
+                    description: 'Weekly/monthly metric tracking dashboards',
+                    price: '$300–$600'
+                }
+            ]
+        },
+        'python-systems': {
+            title: '🐍 Python Systems Development',
+            subtitle: 'Build modular apps, GUIs, and automations in pure Python.',
+            services: [
+                {
+                    emoji: '🖥️',
+                    title: 'GUI App Development (Tkinter/PyQt)',
+                    description: 'Interactive forms or admin tools',
+                    price: '$400–$900'
+                },
+                {
+                    emoji: '🧱',
+                    title: 'Modular Architecture Design',
+                    description: 'Build reusable, scalable Python modules',
+                    price: '$300–$800'
+                },
+                {
+                    emoji: '🔌',
+                    title: 'API Integration & Automation',
+                    description: 'Connect with Stripe, Notion, Twilio, etc.',
+                    price: '+$150–$600'
+                }
+            ]
+        },
+        'ai-workflow': {
+            title: '🧠 AI Workflow Engineering',
+            subtitle: 'Automate decisions and logic with custom GPT integrations.',
+            services: [
+                {
+                    emoji: '🤖',
+                    title: 'Custom GPT Agent Dev',
+                    description: 'Embedded GPT chatbot, text generator, or analyst',
+                    price: '$500–$1,500+'
+                },
+                {
+                    emoji: '🛠',
+                    title: 'Prompt Engineering & Optimization',
+                    description: 'Design smart GPT prompts for automation',
+                    price: '$200–$600'
+                },
+                {
+                    emoji: '🔀',
+                    title: 'Decision Logic Mapping',
+                    description: 'Turn rules into intelligent GPT workflows',
+                    price: '$400–$900'
+                }
+            ]
+        }
+    };
+
+    const menu = serviceMenus[serviceId];
+    if (!menu) return '<p>Service not found</p>';
+
+    let html = `
+        <div class="modal-header">
+            <h2 id="service-modal-title">${menu.title}</h2>
+            <button class="modal-close" onclick="closeServiceModal()" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="service-modal-header">
+            <p>${menu.subtitle}</p>
+        </div>
+        <div class="service-menu-grid">
+    `;
+
+    menu.services.forEach(service => {
+        html += `
+            <div class="service-menu-item">
+                <h3>
+                    <span class="service-emoji">${service.emoji}</span>
+                    ${service.title}
+                </h3>
+                <p>${service.description}</p>
+                <div class="service-price">${service.price}</div>
+            </div>
+        `;
+    });
+
+    html += `</div>`;
+
+    // Add smart solution packages section
+    html += `
+        <div class="package-section">
+            <h3>🎯 Miguel's Smart Solution Packages</h3>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">Tailored packages that bundle web, software, data, and AI — based on client needs.</p>
+            <div class="package-grid">
+                <div class="package-card">
+                    <h4>💼 The Modern Office Upgrade</h4>
+                    <div class="package-price">$950 – $1,600</div>
+                    <div class="package-timeline">📅 Timeline: 2–3 weeks</div>
+                    <p>Turn Excel chaos into a streamlined, intelligent system.</p>
+                    <div class="package-features">
+                        <ul>
+                            <li>Excel-to-System Migration</li>
+                            <li>Workflow Automation & Business Logic</li>
+                            <li>User Training & Documentation</li>
+                            <li>Python GUI or Web Admin Tool</li>
+                            <li>(Optional) AI Assistant for Data Entry</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <h4>🚀 Rapid MVP Launchpad</h4>
+                    <div class="package-price">$1,500 – $2,800</div>
+                    <div class="package-timeline">📅 Timeline: 2–4 weeks</div>
+                    <p>Perfect for startups or internal teams building a working prototype.</p>
+                    <div class="package-features">
+                        <ul>
+                            <li>Full-Stack Web App (Node.js or Python)</li>
+                            <li>Replit-Based Deployment</li>
+                            <li>Login/Auth + Database</li>
+                            <li>Dashboard or Admin Panel</li>
+                            <li>GPT Assistant or Smart Form Autocomplete</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <h4>📊 Data Intelligence Kit</h4>
+                    <div class="package-price">$1,200 – $2,000</div>
+                    <div class="package-timeline">📅 Timeline: 1.5–3 weeks</div>
+                    <p>For decision-makers who need dashboards, reporting, and clear insights.</p>
+                    <div class="package-features">
+                        <ul>
+                            <li>Python Data Analysis & Cleaning</li>
+                            <li>Statistical Modeling & Forecasting</li>
+                            <li>Data Visualization (Plotly, Seaborn, or Power BI)</li>
+                            <li>Weekly KPI Tracker Setup</li>
+                            <li>Strategic Reporting Templates</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <h4>🧠 AI-First Process Automation</h4>
+                    <div class="package-price">$1,700 – $3,500</div>
+                    <div class="package-timeline">📅 Timeline: 2–4 weeks</div>
+                    <p>Embed GPT into real workflows to reduce manual work and decision bottlenecks.</p>
+                    <div class="package-features">
+                        <ul>
+                            <li>GPT Agent or Chatbot for internal use</li>
+                            <li>Custom Prompt Design & Testing</li>
+                            <li>Decision Logic Mapping (flowchart-based logic → GPT)</li>
+                            <li>Optional: Integrated Web UI or Admin Panel</li>
+                            <li>AI Usage Tracking System</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <h4>🧱 Smart Team Ops Suite</h4>
+                    <div class="package-price">$2,200 – $4,000</div>
+                    <div class="package-timeline">📅 Timeline: 3–5 weeks</div>
+                    <p>Everything a growing team needs to manage processes & scale operations.</p>
+                    <div class="package-features">
+                        <ul>
+                            <li>Power BI Dashboards or Python Reports</li>
+                            <li>Process Mapping + Optimization</li>
+                            <li>KPI Metrics Tracker</li>
+                            <li>Internal Tool (GUI or Web-Based)</li>
+                            <li>AI-Powered Report Generator</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #f8fafc; padding: 1.5rem; border-radius: 10px; margin-top: 2rem; text-align: center;">
+                <h4 style="color: #667eea; margin-bottom: 1rem;">🧩 BONUS: Add-On Packs (Available for Any Package)</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: left;">
+                    <div><strong>AI Usage Monitoring Setup:</strong> <span class="service-price" style="margin-left: 0.5rem;">+$150–$400</span></div>
+                    <div><strong>API Integration:</strong> <span class="service-price" style="margin-left: 0.5rem;">+$200–$600</span></div>
+                    <div><strong>Training Session + Docs:</strong> <span class="service-price" style="margin-left: 0.5rem;">+$150–$300</span></div>
+                    <div><strong>Monthly Support Plan:</strong> <span class="service-price" style="margin-left: 0.5rem;">$75–$200/mo</span></div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    return html;
+}
+
 // Close modal with escape key
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
