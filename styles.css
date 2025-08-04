@@ -1147,6 +1147,71 @@ section {
     gap: 1rem;
 }
 
+/* Resume Download Section */
+.resume-downloads {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.resume-downloads h4 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid;
+    font-size: 0.95rem;
+    min-width: 140px;
+    justify-content: center;
+}
+
+.pdf-btn {
+    background: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+.pdf-btn:hover {
+    background: #c82333;
+    border-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3);
+}
+
+.docx-btn {
+    background: #2b5797;
+    color: white;
+    border-color: #2b5797;
+}
+
+.docx-btn:hover {
+    background: #1e3f73;
+    border-color: #1e3f73;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(43, 87, 151, 0.3);
+}
+
+.download-btn i {
+    font-size: 1.1rem;
+}
+
 .contact-form-container {
     background: white;
     padding: 2rem;

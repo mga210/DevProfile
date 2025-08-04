@@ -335,6 +335,27 @@ Miguel is a self-driven problem-solver with an operations mindset who transition
   }
 });
 
+// Resume download endpoints
+app.get('/api/resume/download/pdf', (req, res) => {
+  const filePath = path.join(__dirname, '../resume.pdf');
+  res.download(filePath, 'Miguel_Gonzalez_Resume.pdf', (err) => {
+    if (err) {
+      console.error('Error downloading PDF resume:', err);
+      res.status(404).json({ success: false, error: 'Resume not found' });
+    }
+  });
+});
+
+app.get('/api/resume/download/docx', (req, res) => {
+  const filePath = path.join(__dirname, '../resume.docx');
+  res.download(filePath, 'Miguel_Gonzalez_Resume.docx', (err) => {
+    if (err) {
+      console.error('Error downloading DOCX resume:', err);
+      res.status(404).json({ success: false, error: 'Resume not found' });
+    }
+  });
+});
+
 // Serve the main HTML file for all non-API routes (SPA)
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../index.html'));
