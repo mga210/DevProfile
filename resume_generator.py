@@ -68,9 +68,9 @@ def create_docx_resume():
     # Add hyperlinks for LinkedIn, Portfolio, GitHub
     linkedin_p = doc.add_paragraph()
     linkedin_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    add_hyperlink(linkedin_p, "https://linkedin.com/in/miguel-gonzalez-ai", "LinkedIn")
+    add_hyperlink(linkedin_p, "https://linkedin.com/in/miguel-gonzalez-8a389791", "LinkedIn")
     linkedin_p.add_run(" • ")
-    add_hyperlink(linkedin_p, "https://mga210.github.io/", "Portfolio")
+    add_hyperlink(linkedin_p, "https://mga210.github.io/DevProfile", "Portfolio")
     linkedin_p.add_run(" • ")
     add_hyperlink(linkedin_p, "https://github.com/mga210", "GitHub")
     
@@ -291,7 +291,7 @@ def create_pdf_resume():
     # Header
     story.append(Paragraph("Miguel A. Gonzalez Almonte", title_style))
     story.append(Paragraph("Plano, TX • 787-367-9843 • mgonzalez869@gmail.com", contact_style))
-    story.append(Paragraph('<a href="https://linkedin.com/in/miguel-gonzalez-ai" color="blue">LinkedIn</a> • <a href="https://mga210.github.io/" color="blue">Portfolio</a> • <a href="https://github.com/mga210" color="blue">GitHub</a>', contact_style))
+    story.append(Paragraph('<a href="https://linkedin.com/in/miguel-gonzalez-8a389791" color="blue">LinkedIn</a> • <a href="https://mga210.github.io/DevProfile" color="blue">Portfolio</a> • <a href="https://github.com/mga210" color="blue">GitHub</a>', contact_style))
     
     story.append(Spacer(1, 12))
     
