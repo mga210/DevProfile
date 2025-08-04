@@ -1980,6 +1980,33 @@ section {
     flex-shrink: 0;
 }
 
+/* Achievement Link Styling */
+.achievement-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.achievement-link:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.achievement-link i {
+    margin-right: 6px;
+    font-size: 0.8rem;
+}
+
 .consultation-cta {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 60px 50px;
